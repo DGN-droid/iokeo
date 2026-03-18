@@ -1,0 +1,1528 @@
+.navbar {
+   display: flex;
+width: 1920px;
+padding: 30px 200px;
+justify-content: space-between;
+align-items: center;
+background: #FFF;
+box-shadow: 0 4px 4px 0 rgba(117, 122, 123, 0.05);
+font-size: 19px;
+   
+
+
+
+}
+
+
+
+
+:root {
+    --font-main: 'Aptos', 'Inter', 'Segoe UI', sans-serif;
+    --primary-blue: #0084A0;
+    --card-bg: #F3FAFC;
+}
+
+body {
+    font-family: var(--font-main);
+    -webkit-font-smoothing: antialiased;
+}
+
+
+
+/* 2. Le wrapper qui force l'alignement horizontal */
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+/* 3. Style du logo */
+.logo img {
+    height: 50px; /* Taille proportionnelle à ta capture */
+    display: block;
+}
+
+/* 4. Style de la liste d'onglets */
+.nav-links ul {
+    display: flex;
+    list-style: none;
+    gap: 40px; /* Espacement entre les mots comme sur ton image */
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333333; /* Gris foncé pour les onglets inactifs */
+    transition: color 0.3s;
+}
+
+/* Couleur bleu ciel pour l'onglet actif */
+.nav-item.active {
+    color: #1199B3; /* Le bleu ciel exact de ta capture */
+    font-weight: 700;
+}
+
+/* 5. Style du bouton (Pilule bleue) */
+.btn-message {
+    background-color:  #0093B6;
+    background-blend-mode: color; /* Bleu canard / bleu mer */
+     box-shadow: 0 2px 15px 0 rgba(0, 147, 182, 0.20), 0 6px 27px 0 rgba(0, 147, 182, 0.15), 0 1px 0 0 rgba(255, 255, 255, 0.20) inset, 0 1px 4px 0 rgba(255, 255, 255, 0.25) inset;
+    border-radius: 999px; /* Forme pilule parfaite de Figma */
+ }
+
+
+.btn-message:hover {
+    background-color: #0093B6;
+}
+
+
+.hero .container.hero-container {
+    max-width: 1240px; 
+    margin: 0 auto;
+    padding: 0 40px; /* Marges égales à gauche et à droite */
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero {
+  position: relative;
+    width: 100vw;       /* 100% de la largeur de la fenêtre de visualisation */
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    min-height: 600px;  /* Ajuste selon la hauteur souhaitée */
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Fix pour l'image qui ne venait pas */
+
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* L'image remplit tout l'espace proprement */
+    z-index: 1;        /* On la met au niveau 1 */
+}
+
+.hero-container {
+    position: relative; /* On redonne une position relative au contenu */
+    z-index: 2;        /* On place le texte au-dessus de l'image (2 > 1) */
+    color: white;       /* Pour que le texte soit lisible sur l'image sombre */
+    text-align: center;
+}
+/* Filtre sombre pour rendre le texte lisible (comme sur Figma) */
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.2); /* Ajuste selon l'opacité de ta maquette */
+    z-index: 0;
+}
+
+.hero-container {
+    position: relative;
+    z-index: 1; /* Passe au-dessus de l'image et du filtre */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-content {
+    color: #FFF;
+    text-align: center;
+}
+
+/* Texte en gras et centré */
+.hero-content h1 {
+    align-self: stretch;
+    font-family: "Aptos";
+font-size: 72px;
+font-style: normal;
+font-weight: 700;
+line-height: 130%; /* 93.6px */
+}
+
+
+.hero-content h6 {
+    width: 936px;
+font-family: "Aptos";
+font-size: 23px;
+font-style: normal;
+font-weight: 700;
+line-height: 130%;
+}
+
+.hero-btns {
+    display: flex;
+    gap: 15px;
+    justify-content: center; /* Centre les deux boutons */
+}
+
+
+/* Conteneur des boutons pour le centrage */
+.hero-btns {
+    display: flex;
+    gap: 20px; /* Espace entre les deux boutons */
+    justify-content: center;
+    margin-top: 30px;
+}
+
+
+
+
+
+
+
+
+.btn-base {
+font-family: "Aptos";
+font-size: 16px;
+font-style: normal;
+font-weight: 700;
+line-height: 21.6px; /* 135% */
+letter-spacing: -0.32px;
+    text-decoration: none;
+   box-shadow: 0 2px 15px 0 rgba(0, 147, 182, 0.20), 0 6px 27px 0 rgba(0, 147, 182, 0.15), 0 1px 0 0 rgba(255, 255, 255, 0.20) inset, 0 1px 4px 0 rgba(255, 255, 255, 0.25) inset;
+   background: #0093B6;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Style de base pour les deux boutons */
+.btn-hero {
+    display: flex;
+padding: 13px 30px;
+justify-content: center;
+align-items: center;
+gap: 10px;
+text-decoration: none;
+
+
+}
+
+
+
+.btn-primary {
+      
+   border-radius: 999px;
+background: #0093B6;
+background-blend-mode: color;
+/* effet */
+/* box-shadow: 0 2px 15px 0 rgba(0, 147, 182, 0.20), 0 6px 27px 0 rgba(0, 147, 182, 0.15), 0 1px 0 0 rgba(255, 255, 255, 0.20) inset, 0 1px 4px 0 rgba(255, 255, 255, 0.25) inset;  */
+color: #FFF;
+text-align: center;
+text-shadow: 0 2px 2px rgba(0, 0, 0, 0.03);
+font-family: "Aptos";
+font-size: 16px;
+font-style: normal;
+font-weight: 700;
+line-height: 21.6px; /* 135% */
+letter-spacing: -0.32px;
+text-decoration: none;
+}
+
+/* Bouton secondaire */
+.btn-secondary {
+    border-radius: 999px;
+border: 1px solid #0093B6;
+background: #FFF;
+/* effet */
+/* box-shadow: 0 2px 15px 0 rgba(0, 147, 182, 0.20), 0 6px 27px 0 rgba(0, 147, 182, 0.15), 0 1px 0 0 rgba(255, 255, 255, 0.20) inset, 0 1px 4px 0 rgba(255, 255, 255, 0.25) inset; */
+color: #0093B6;
+text-align: center;
+text-shadow: 0 2px 2px rgba(0, 0, 0, 0.03);
+font-family: "Aptos";
+font-size: 16px;
+font-style: normal;
+font-weight: 700;
+line-height: 21.6px; /* 135% */
+letter-spacing: -0.32px;
+text-decoration: none;
+
+}
+
+
+
+
+
+
+
+.btn-primary {
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+  /* box-shadow:  
+        0 4px 14px 0 rgba(0, 147, 182, 0.39),      
+        0 1px 0 0 rgba(255, 255, 255, 0.3) inset; */
+    transition: all 0.3s ease;
+    width: 224;
+height: 48;
+border-radius: 999px;
+gap: 10px;
+border-radius: 0 deg;
+opacity: 1;
+padding-top: 13px;
+padding-right: 30px;
+padding-bottom: 13px;
+padding-left: 30px;
+
+}
+
+/* On affine le bouton secondaire pour qu'il paraisse plus "doux" */
+.btn-secondary {
+   border: 1.5px solid #0093B6; 
+   /* box-shadow: 
+        0 4px 14px 0 rgba(0, 0, 0, 0.1),           
+        0 1px 4px 0 rgba(0, 147, 182, 0.05); */      
+    transition: all 0.3s ease;
+    width: 224;
+height: 48;
+border-radius: 999px;
+gap: 10px;
+border-radius: 0 deg;
+opacity: 1;
+padding-top: 13px;
+padding-right: 30px;
+padding-bottom: 13px;
+padding-left: 30px;
+
+}
+
+
+
+
+
+
+
+
+
+/* EFFET DE CLIC : On garde la couleur mais on simule l'appui */
+.btn-primary:active, .btn-secondary:active {
+    transform: scale(0.96); /* Effet d'enfoncement léger */
+    filter: brightness(0.95); /* Assombrit très légèrement pour confirmer le clic sans changer la couleur */
+}
+
+
+.btn-hero {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+
+
+
+
+/* Espacement global de la section */
+.section-padding {
+    padding: 80px 0;
+    background-color: #ffffff;
+}
+
+/* Alignement des deux colonnes */
+.about-wrapper {
+    display: flex;
+    align-items: center; /* Centre verticalement le texte et l'image */
+    justify-content: space-between;
+    gap: 60px; /* Espace entre texte et image (Auto Layout Figma) */
+}
+
+/* Colonne Texte */
+.about-content {
+    flex: 1;
+    align-self: stretch; /* Prend 50% de la largeur */
+}
+
+.about-title {
+   color: #232323;
+/* text/h3 */
+font-family: "Aptos";
+font-size: 46px;
+font-style: normal;
+font-weight: 700;
+line-height: 130%; /* 59.8px */
+}
+
+.about-text {
+    color: #232323;
+text-align: justify;
+/* text/body */
+font-family: "Aptos";
+font-size: 19px;
+font-style: normal;
+font-weight: 400;
+line-height: 130%; /* 24.7px */
+    
+}
+
+
+
+
+
+.btn-about {
+    
+    display:inline-flex;
+    padding: 13px 30px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    
+    
+    border-radius: 999px;
+background: #0093B6;
+background-blend-mode: color;
+/* effet */
+/*box-shadow: 0 2px 15px 0 rgba(0, 147, 182, 0.20), 0 6px 27px 0 rgba(0, 147, 182, 0.15), 0 1px 0 0 rgba(255, 255, 255, 0.20) inset, 0 1px 4px 0 rgba(255, 255, 255, 0.25) inset;
+    border: none;*/
+    
+    /* Typographie */
+   color: #FFF;
+text-align: center;
+text-shadow: 0 2px 2px rgba(0, 0, 0, 0.03);
+font-family: "Aptos";
+font-size: 16px;
+font-style: normal;
+font-weight: 700;
+line-height: 21.6px; /* 135% */
+letter-spacing: -0.32px;
+    text-decoration: none;
+
+    
+}
+
+
+
+
+
+
+/* Colonne Image */
+.about-image {
+    flex: 2;
+     width: 705px;
+    height: 311px;
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 75px;
+
+    
+}
+
+
+
+/* L'image Tata Somba */
+.about-image img {
+    
+    
+    object-fit: cover; 
+    object-position: center;
+
+    /* Arrondi des bords identique au Figma */
+    border-radius: 16px; 
+    
+    /* Optionnel : légère ombre pour détacher l'image du fond blanc */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Nos services */
+
+/* Titre de la section */
+.section-main-title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 900; /* Extra gras */
+    margin-bottom: 60px;
+    color: #1a1a1a;
+    letter-spacing: -0.5px;
+}
+
+/* Grille de services */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* Style de la carte */
+.service-card {
+    background: #f9fbff;
+    border-radius: 20px;
+    padding: 45px 30px; /* Plus d'espace interne pour la lisibilité */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+/* Titres des services plus imposants */
+.service-card h3 {
+    font-size: 20px; /* Légèrement plus grand */
+    font-weight: 800; /* Très gras pour correspondre à la maquette */
+    color: #1a1a1a;
+    margin-bottom: 25px;
+    line-height: 1.3;
+    min-height: 60px; /* Aligne le début des listes */
+}
+
+/* Liste de caractéristiques plus lisible */
+.service-card ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 40px;
+    text-align: left; /* Alignement à gauche pour faciliter la lecture */
+    width: 100%;
+}
+
+.service-card ul li {
+    font-family: 'Aptos', sans-serif;
+    font-size: 19px; /* On garde tes 19px demandés plus tôt */
+    font-weight: 400;
+    line-height: 130%; /* Poids medium au lieu de light */
+   
+}
+
+/* La puce bleue caractéristique */
+.service-card ul li::before {
+    content: "•";
+    color: #0084a0;
+    font-size: 20px;
+    position: absolute;
+    left: 0;
+    top: -2px;
+}
+
+/* Bouton Voir plus */
+.btn-view {
+  /* display: flex;
+width: 399px;
+padding: 13px 30px; */
+/*justify-content: center;
+align-items: center;
+gap: 10px;
+box-shadow: 0 2px 15px 0 rgba(0, 147, 182, 0.20), 0 6px 27px 0 rgba(0, 147, 182, 0.15), 0 1px 0 0 rgba(255, 255, 255, 0.20) inset, 0 1px 4px 0 rgba(255, 255, 255, 0.25) inset;*/
+}
+
+.btn-view:hover {
+    /* border-radius: 999px;
+background: #0093B6;
+background-blend-mode: color; */
+ /* border-radius: 999px;
+background: #0093B6;
+background-blend-mode: color;*/
+/* effet */
+/* box-shadow: 0 2px 15px 0 rgba(0, 147, 182, 0.20), 0 6px 27px 0 rgba(0, 147, 182, 0.15), 0 1px 0 0 rgba(255, 255, 255, 0.20) inset, 0 1px 4px 0 rgba(255, 255, 255, 0.25) inset; */
+
+
+
+/*color: #FFF;
+text-align: center;
+text-shadow: 0 2px 2px rgba(0, 0, 0, 0.03);
+font-family: "Aptos";
+font-size: 16px;
+font-style: normal;
+font-weight: 700;
+line-height: 21.6px; 
+letter-spacing: -0.32px;*/
+
+}
+
+
+
+
+
+.nos-clients-img {
+    width: 100%;       /* Force l'image à prendre toute la largeur disponible */
+    height: auto;      /* Garde les proportions pour éviter d'écraser les logos */
+    display: block;    /* Supprime l'espace vide sous l'image (inline-gap) */
+    object-fit: contain; /* S'assure que rien n'est coupé */
+    margin: 0;         /* Supprime les marges par défaut */
+}
+
+/* Si tu as un conteneur autour de l'image */
+.clients-section {
+    padding: 0;        /* Enlève les paddings qui créent des bandes blanches */
+    overflow: hidden;  /* Empêche le scroll horizontal si l'image dépasse */
+    line-height: 0;    /* Sécurité supplémentaire contre les vides de texte */
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Le container qui centre tout le site de façon prononcée et visible*/
+.container {
+    max-width: 1240px; /* Largeur standard Figma */
+    margin: 0 auto;    /* Centre le bloc horizontalement */
+    padding: 0 40px;   /* Voici la marge magique : 40px à gauche et à droite */
+    width: 100%;       /* Indispensable pour le responsive */
+}
+
+/* On applique ce container à la NavBar */
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px; /* Ajuste selon ta hauteur de barre */
+}
+
+
+/* Le container qui crée le décalage vers la droite */
+.asymmetric-layout {
+    width: 1920px;
+    margin: 0 auto;
+    /* On met plus d'espace à gauche qu'à droite */
+    padding-left: 350px; 
+    padding-right: 200px;
+    box-sizing: border-box;
+}
+
+
+/* Configuration du Container pour le décalage vers la droite */
+.container {
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+    /* On augmente le vide à gauche (18%) pour pousser vers la droite */
+    padding-left: 18%;  
+    padding-right: 5%; /* Espace réduit côté flèche */
+    box-sizing: border-box;
+}
+
+/* Alignement spécifique pour le bloc "A propos" */
+.about-wrapper {
+    display: flex;
+    justify-content: flex-start; /* Aligne le contenu au début du nouveau padding */
+    align-items: center;
+    gap: 40px; /* Espace entre le texte et l'illustration Tata Somba */
+}
+
+.about-content {
+    flex: 0 1 550px; /* Largeur fixe pour le texte pour accentuer le vide à gauche */
+}
+
+.about-image img {
+    max-width: 450px;
+    height: auto;
+}
+
+/* Alignement de la grille de Services */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colonnes comme sur Figma */
+    gap: 30px;
+    margin-top: 40px;
+}
+
+/* Titres (A propos de nous / Nos services) */
+.about-title, .section-main-title {
+    font-family: "Aptos", sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 25px;
+    color: #1A1A1A;
+}
+
+/* Section Clients (pour rester cohérent avec le décalage) */
+.clients-section {
+    padding-left: 12%;
+    padding-right: 6%;
+}
+
+
+/* Conteneur de la carte avec la couleur de fond Figma #F3FAFC */
+.service-card {
+    background-color: #F3FAFC; 
+    border-radius: 12px;
+    padding: 20px 15px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-height: 347px; 
+    width: 323px;      
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Titre : Très gros et très noir */
+.service-card h3 {
+    font-size: 26px;    
+    font-weight: 900;   
+    color: #000000;
+    line-height: 1.2;
+    margin: 20px 0;    
+    min-height: 80px;   
+}
+
+/* Liste des caractéristiques : Bien visible mais pas en gras */
+.service-card ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+    text-align: left;
+    width: 100%;
+}
+
+.service-card ul li {
+    font-size: 18px;    /* Police plus grande pour la lisibilité */
+    font-weight: 500;   /* Poids Medium pour ne pas étouffer le titre */
+    color: #1A1A1A;
+    line-height: 1.4;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+/* Puce bleue */
+.service-card ul li::before {
+    content: "•";
+    color: #0084A0;
+    font-size: 24px;
+    position: absolute;
+    left: 0;
+    top: -3px;
+}
+
+/* Bouton "Voir plus" arrondi comme sur la capture */
+.btn-view {
+     margin-top: auto;
+    background-color: #0084A0;
+    color: #FFFFFF;
+    text-decoration: none;
+    width: 100%;
+    padding: 15px 0;
+    border-radius: 50px;
+    font-weight: 800;
+    font-size: 18px;
+    transition: background 0.3s;
+border-radius: 999px;
+background: #0093B6;
+background-blend-mode: color;
+box-shadow: 0 2px 15px 0 rgba(0, 147, 182, 0.20), 0 6px 27px 0 rgba(0, 147, 182, 0.15), 0 1px 0 0 rgba(255, 255, 255, 0.20) inset, 0 1px 4px 0 rgba(255, 255, 255, 0.25) inset;
+/*
+width: 399;
+height: 48;
+border-radius: 999px;
+border-radius: 0 deg;
+opacity: 1;
+gap: 10px;
+padding-top: 13px;
+padding-right: 30px;
+padding-bottom: 13px;
+padding-left: 30px;*/
+
+}
+
+
+
+/* Section clients : On reste sur un affichage standard centré */
+.clients-section {
+    width: 100%;
+    max-width: 1240px; /* Largeur standard pour rester aligné au Hero */
+    margin: 0 auto;
+    padding: 80px 40px;
+    box-sizing: border-box;
+}
+
+/* On organise les logos en grille propre */
+.image-wrapper {
+    display: grid;
+    /* Création de 4 colonnes égales */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 30px; /* Espace entre les blocs */
+    justify-items: center;
+    align-items: center;
+}
+
+/* Style des logos agrandis */
+.nos-clients-img {
+    width: 100%;       /* Prend toute la largeur de sa colonne */
+    max-width: 280px;  /* Taille augmentée pour plus de visibilité */
+    height: 140px;     /* Hauteur augmentée */
+    object-fit: contain; /* Évite de déformer les logos officiels */
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    /* Optionnel : ajout d'une très légère ombre pour le relief comme sur Figma */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
+}
+
+/* Titre Nos clients (déjà centré par ton style inline, on renforce ici) */
+.clients-section h2 {
+    text-align: center !important;
+    margin-left: 0 !important;
+}
+
+/* Responsive : passage à 2 colonnes sur tablette/mobile */
+@media (max-width: 992px) {
+    .image-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+
+
+
+
+
+
+.site-footer {
+    width: 100%;
+    max-width: 1920px;
+    height: 460px; /* Ta hauteur Figma */
+    background: rgba(0, 0, 0, 1); /* Ton fond noir */
+    position: relative; /* Indispensable pour que le bottom: 0 fonctionne */
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.footer-bottom {
+    /* Dimensions Figma */
+    width: 100%;
+    height: 69.8px;
+    
+    /* Positionnement tout en bas du bloc de 460px */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    /* Style de la bordure supérieure (ligne horizontale) */
+    border-top: 1px solid rgba(43, 57, 68, 1);
+    
+    /* Centrage du texte */
+    display: flex;
+    align-items: center; /* Centre verticalement le texte dans les 69.8px */
+}
+
+.footer-bottom .container {
+    width: 100%;
+    max-width: 1520px; /* Ta largeur de contenu */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-bottom p {
+    font-family: 'Aptos', sans-serif;
+    font-size: 13px;
+    color: #777; /* Gris discret comme sur Figma */
+    margin: 0;
+    text-align: center; /* Pour centrer le texte ou justify-content: space-between */
+}
+
+.footer-desc {
+    font-weight: 500; /* Un peu plus que normal pour compenser le fond noir */
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+.site-footer h4 {
+    color: #46C2E1;
+    font-weight: 900; /* Titres de colonnes très visibles */
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.footer-nav a, .footer-contact p, .footer-contact a {
+    font-weight: 600; /* Liens du footer plus épais */
+    font-size: 15px;
+}
+
+
+
+
+
+.footer-wrapper {
+    display: flex;
+    flex-direction: column;   /* Aligne logo, texte et linkedin l'un sous l'autre */
+    align-items: flex-start;  /* Aligne tout à gauche à l'intérieur du bloc centré */
+    justify-content: center;  /* Centre le groupe verticalement dans les 460px */
+    
+    width: 1520px;            /* Ta largeur Figma exacte */
+    height: 100%;             /* Prend toute la hauteur disponible pour le centrage */
+    margin: 0 auto;           /* Centre le bloc de 1520px horizontalement dans le noir */
+    
+    padding-bottom: 69.8px;   /* Évite que le contenu ne touche la barre de copyright */
+    box-sizing: border-box;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Centrage de la barre de navigarion du logo et du bouton */
+
+/* Barre de navigation fixe ou standard */
+.navbar {
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 1px solid #f0f0f0; /* Optionnel : ligne légère sous le menu */
+}
+
+/* Le wrapper qui aligne logo et bouton sur les bords du container */
+.nav-wrapper {
+    max-width: 1240px; /* Aligné sur ton Hero et tes Logos Clients */
+    margin: 0 auto;
+    padding: 0 40px;   /* Marge identique à gauche et à droite */
+    display: flex;
+    justify-content: space-between; /* Pousse le logo à gauche et le CTA à droite */
+    align-items: center;
+    height: 90px;      /* Hauteur de ta barre */
+    box-sizing: border-box;
+}
+
+/* Styles des liens au centre */
+.nav-links ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-family: "Aptos", sans-serif;
+}
+
+.nav-item.active {
+    color: #0089a7; /* Ton bleu iokeo */
+    font-weight: 700;
+}
+
+
+.btn-message {
+    background-color: #0089a7;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    white-space: nowrap; 
+}
+
+/* CORRECTIF DE CENTRAGE */
+.navbar {
+    width: 100% !important;     /* Force la barre à prendre toute la largeur de l'écran */
+    max-width: 100vw !important; /* Empêche tout dépassement horizontal */
+    display: block !important;   /* Permet au wrapper interne de se centrer */
+    padding: 0 !important;       /* On annule le padding qui décale tout */
+}
+
+.nav-wrapper {
+    max-width: 1240px;           /* Largeur de ton contenu Figma */
+    margin: 0 auto !important;   /* LA MAGIE : centre le bloc horizontalement */
+    padding: 0 40px;             /* Tes marges de sécurité sur les côtés */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+}
+
+
+
+
+
+
+
+/* 1. Déclaration des polices Aptos */
+
+@font-face {
+    font-family: 'Aptos';
+    src: url('./fonts/Aptos.ttf') format('truetype');
+    font-weight: 400; /* Normal */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Aptos';
+    src: url('./fonts/Aptos-Bold.ttf') format('truetype');
+    font-weight: 700; /* Bold */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Aptos';
+    src: url('./fonts/Aptos-ExtraBold.ttf') format('truetype');
+    font-weight: 800; /* ExtraBold */
+    font-style: normal;
+}
+
+/* 2. Application aux textes */
+
+body {
+    font-family: 'Aptos', sans-serif;
+}
+
+h1, h2, .about-title {
+    font-family: 'Aptos';
+    font-weight: 800; /* Utilise automatiquement Aptos-ExtraBold */
+}
+
+.about-text {
+    font-family: 'Aptos';
+    font-weight: 400; /* Utilise automatiquement Aptos (Normal) */
+    font-size: 19px;
+    line-height: 1.3;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- Style spécifique pour les titres des services --- */
+.service-card h2 {
+    align-self: stretch;
+    color: #000;
+text-align: center;
+font-family: "Aptos";
+font-size: 23px;
+font-style: normal;
+font-weight: 600;
+line-height: 130%; /* 29.9px */
+}
+
+/* --- Style spécifique pour les listes (items) --- */
+.service-card ul {
+    list-style: none;          /* On enlève les puces par défaut */
+    padding: 0;
+    margin-bottom: 30px;
+    flex-grow: 1;              /* Aide à pousser le bouton "Voir plus" vers le bas */
+}
+
+.service-card li {
+   font-family: 'Aptos', sans-serif;
+    font-weight: 400;
+    font-size: 19px;          /* Augmenté selon ta demande */
+    line-height: 130%;       /* Correspond à environ 24.7px */
+    letter-spacing: 0%;
+}
+
+/* Création de la puce bleue personnalisée */
+.service-card li::before {
+    content: "•";              /* Le point */
+    color: #0089A7;            /* Ton bleu Iokeo */
+    font-weight: bold;
+    font-size: 20px;
+    position: absolute;
+    left: 0;                   /* Aligné tout à gauche du texte */
+    top: -2px;                 /* Ajustement vertical de la puce */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* STRUCTURE GLOBALE */
+.site-footer {
+    width: 100%;
+    height: 460px;
+    background-color: #000000;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    padding-top: 80px; 
+    position: relative;
+    box-sizing: border-box;
+}
+
+/* LE CONTENEUR PRINCIPAL */
+.footer-wrapper {
+    width: 1520px;           /* Ta largeur "Remplissage" Figma */
+    margin: 0 auto;          /* Centre le tout horizontalement */
+    display: flex;
+    flex-direction: row;     /* Aligne les blocs horizontalement */
+    justify-content: flex-start; /* Aligne tout vers la gauche */
+    gap: 100px;              /* L'espace entre la description et les colonnes */
+    padding: 0 40px;
+}
+
+/* BLOC GAUCHE (Logo + Texte + LinkedIn) */
+/* BLOC GAUCHE (Conteneur du logo et du texte) */
+.footer-brand {
+    width: 525px;            /* Ta largeur Figma */
+    display: flex;
+    flex-direction: column;
+    gap: 25px;               /* L'espace entre le logo et le paragraphe */
+    align-items: flex-start; /* Aligne le logo et le texte à gauche */
+}
+
+/* CIBLE LE LOGO PRÉCISÉMENT */
+.footer-brand img {
+    /* Ajuste ces valeurs selon la taille voulue sur Figma */
+    width: 180px;            /* Largeur fixe pour réduire la taille */
+    height: auto;            /* Garde les proportions */
+    display: block;
+    margin: 0;               /* Reset des marges par défaut */
+}
+
+/* LA DESCRIPTION */
+.footer-desc {
+   /* font-family: 'Aptos', sans-serif;
+    font-size: 19px;
+    line-height: 130%;
+    color: rgba(255, 255, 255, 1);
+;*/
+   
+margin: 0;             
+    width: 523;
+height: 70;
+range: 0 deg;
+opacity: 1;
+top: 82px;
+
+font-family: "Aptos";
+font-weight: 400;
+font-style: "Regular";
+font-size: 19px;
+padding-bottom: NONE;
+line-height: 130%;
+letter-spacing: 0%;
+vertical-align: middle;
+
+
+}
+
+
+
+/* Conteneur de l'icône */
+.social-links {
+    margin-top: 10px; 
+    display: flex;
+    align-items: center;
+}
+
+/* Le bouton circulaire (le lien) */
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;           
+    height: 35px;          
+    border: 1px solid   rgba(255, 255, 255, 1); 
+    border-radius: 50%;    
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+/* L'icône LinkedIn elle-même (le "in") */
+.social-links a img {
+    width: 18px;           
+    height: auto;
+    display: block;
+    
+}
+
+
+
+
+
+
+
+
+
+.footer-desc {
+    font-family: 'Aptos', sans-serif;
+    font-size: 19px;
+    line-height: 130%;
+    color: #ffffff;
+    margin: 0;
+}
+
+/* STYLE DES COLONNES (Pages & Contact) */
+.footer-nav, .footer-contact {
+    display: flex;
+    flex-direction: column;
+    min-width: 200px;       
+}
+
+.site-footer h4 {
+    width: 108.19999694824219;
+height: 20;
+bleed: 0 deg;
+opacity: 1;
+
+font-family: "Aptos";
+font-weight: 400;
+font-style: "Regular";
+font-size: 15px;
+padding-bottom: NONE;
+line-height: 130%;
+letter-spacing: 0%;
+vertical-align: middle;
+
+   /* color: #46C2E1;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-transform: uppercase; */
+}
+
+.footer-nav ul {
+    width: 67.58999633789062;
+height: 25.190000534057617;
+bleed: 0 deg;
+opacity: 1;
+top: 53.6px;
+
+
+
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-nav li, .footer-contact p {
+    width: 67.58999633789062;
+height: 25.190000534057617;
+range: 0 deg;
+opacity: 1;
+top: 53.6px;
+
+
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: rgba(158, 161, 161, 1);
+;
+}
+
+
+
+.footer-nav a, .footer-contact a {
+    color: rgba(158, 161, 161, 1);
+;
+    text-decoration: none;
+}
+
+
+/* Couleur au survol pour la navigation du footer */
+.footer-nav a:hover, 
+.footer-contact a:hover {
+    color: #46C2E1 !important; /* Force la couleur bleu ciel Figma */
+    background-color: transparent !important; /* Supprime le fond bleu */
+    transition: color 0.3s ease; /* Rend le changement fluide */
+    transform: none; /* Supprime l'effet de levée si non désiré */
+}
+
+/* Si vous voulez que le lien actif (Accueil) reste bleu */
+.footer-nav a.active {
+    color: #46C2E1;
+    font-weight: 700;
+}
+
+
+
+/* BARRE DE COPYRIGHT */
+.footer-bottom {
+
+
+
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 69.8px;
+    border-top: 1px solid rgba(43, 57, 68, 1);
+    display: flex;
+    align-items: center;
+}
+
+.footer-bottom .container {
+       width: 604.0700073242188;
+height: 20.799999237060547;
+range: 0 deg;
+opacity: 1;
+top: 24.8px;
+gap: 66px;
+
+
+    width: 1520px;
+    margin: 0 auto;
+    padding-left: 40px;      /* Aligné pile sur le logo */
+}
+
+
+
+
+
+/*width: 89;
+height: 19;
+range: 0 deg;
+opacity: 1;
+
+
+    font-family: "Aptos";
+font-weight: 400;
+font-style: "Regular";
+font-size: 15px;
+padding-bottom: NONE;
+line-height: 130%;
+letter-spacing: 0%;
+vertical-align: middle;
+*/
+
+
+.footer-bottom p {
+    display: flex;
+    align-items: center;
+    
+    
+    font-family: 'Aptos', sans-serif;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.5);
+    margin: 0;
+
+
+    width: 604.0700073242188;
+height: 20.799999237060547;
+range: 0 deg;
+opacity: 1;
+top: 24.8px;
+gap: 66px;
+
+}
+
+/* Style spécifique pour le point de séparation */
+.footer-bottom .separator {
+    color: rgba(255, 255, 255, 0.5); 
+    font-weight: bold;
+}
+
+/* Style pour les liens (Privacy / Terms) */
+.footer-bottom a {
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-bottom a:hover {
+    color: #ffffff; /* Brille au survol */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- AJOUTS POUR FORMAT MOBILE (ANDROID) --- */
+
+/* 1. On cache le burger par défaut sur PC */
+.burger-menu {
+    /*
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;*/
+
+animation-timing-function: ease-out;
+animation-duration: 300ms;
+width: 28;
+height: 28;
+border-radius: 0 deg;
+opacity: 1;
+
+
+}
+
+.burger-menu span {
+    width: 30px;
+    height: 3px;
+    background-color: #333;
+    border-radius: 2px;
+    transition: 0.3s;
+} 
+
+@media (max-width: 768px) {
+    .navbar {
+        width: 100%; 
+        padding: 15px 20px; 
+    }
+
+    
+    .burger-menu {
+        display: flex;
+    }
+
+    
+    .nav-links {
+       display: none; 
+        position: absolute;
+        top: 70px; 
+        left: 0;
+        width: 100%;
+        background: #FFF;
+        flex-direction: column;
+        padding: 40px 0;
+        box-shadow: 0 10px 10px rgba(0,0,0,0.1); 
+        z-index: 1000;
+
+ 
+
+    }
+
+    
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+
+    
+    .nav-item.active {
+        background-color: #E6F7FA; 
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+        border-bottom: 2px solid #1199B3;
+    }
+
+    
+    .mobile-cta {
+        display: none;
+    }
+}
+
+
+   
