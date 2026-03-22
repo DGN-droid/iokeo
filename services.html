@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iokeo - Transformation Business</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+<header class="navbar">
+    <div class="container nav-wrapper">
+        
+        <a href="/" class="logo">
+            <img src="logo.svg" alt="iokeo business transformation">
+        </a>
+
+        <div class="burger-menu" id="burger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <nav class="nav-links" id="nav-links">
+            <ul>
+                <li><a href="#accueil" class="nav-item active">Accueil</a></li>
+                <li><a href="a-propos.html" class="nav-item">A propos</a></li>
+                <li><a href="#" class="nav-item">Services</a></li>
+                <li><a href="#" class="nav-item">Contacts</a></li>
+            </ul>
+        </nav>
+        <div class="btn-general">
+<div class="mobile-cta">
+            <a href="#" class="btn-message">Envoyez un message</a>
+        </div>
+        </div>
+    </div>
+</header>
+    <main>
+
+<section class="services-banner">
+    <div class="banner-content">
+        <h1>Nos services</h1>
+    </div>
+</section>
+<style>
+ .services-banner {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('image/img11.png');
+    
+    background-size: cover;       /* L'image remplit tout l'espace */
+    background-position: center;  /* L'image reste centrée visuellement */
+    background-repeat: no-repeat;
+    
+    /* --- LES MODIFICATIONS POUR ÉLARGIR --- */
+    width: 100vw;                 /* Force la largeur à 100% de la fenêtre (Viewport Width) */
+    position: relative;           /* Parfois nécessaire si le parent a un padding */
+    left: 50%;                    /* Centre la section si elle est dans un container */
+    transform: translateX(-50%);  /* Centre la section si elle est dans un container */
+    /* -------------------------------------- */
+    
+    height: 500px;                /* Hauteur fixe pour bien voir la case */
+    display: flex;                /* Pour centrer le texte */
+    align-items: center;          /* Centrage vertical */
+    justify-content: center;      /* Centrage horizontal */
+}
+
+.banner-content h1 {
+    font-family: 'Aptos', sans-serif;
+    font-size: 64px;
+    font-weight: 800;
+    color: #FFFFFF;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4); /* Ombre pour la lisibilité */
+    margin: 0;
+}
+</style>
+
+<section class="management-section">
+    <div class="container-management">
+        
+        <div class="management-sidebar">
+            <div class="vertical-nav-line"></div>
+            <ul class="tabs-list">
+                <li class="tab-item active" data-tab="management-si">
+                    <span class="dot"></span>
+                    Management SI
+                </li>
+                <li class="tab-item" data-tab="gestion-projets">
+                    <span class="dot"></span>
+                    Management des projets
+                </li>
+                <li class="tab-item" data-tab="si-doc">
+                    <span class="dot"></span>
+                    Systèmes d'Information Documentaires et Collaboratifs Open Source
+                </li>
+                <li class="tab-item" data-tab="ingenierie">
+                    <span class="dot"></span>
+                    Ingénierie d'applications métier cross-plateforme
+                </li>
+                <li class="tab-item" data-tab="transfo-num">
+                    <span class="dot"></span>
+                    Transformation numérique des processus internes avec Microsoft 365
+                </li>
+                <li class="tab-item" data-tab="bi-power">
+                    <span class="dot"></span>
+                    BI avec Microsoft Power BI et Management de la performance
+                </li>
+            </ul>
+        </div>
+
+        <div class="management-content">
+            <h2 class="content-title">Management SI</h2>
+            
+            <p class="text-intro">IOKEO vous propose une offre de service dédiée au management du système d'information. Nous vous accompagnons dans la définition, la mise en œuvre et le pilotage de votre stratégie système d'information, en tenant compte de vos besoins métiers, de vos contraintes techniques, de vos enjeux économiques et de votre contexte sectoriel ou industriel.</p>
+            
+            <p class="text-sub-intro">Nos prestations de service sous cette offre comprennent :</p>
+            
+            <ul class="details-check-list">
+                <li>
+                    Des missions de conseil en stratégie système d'information visant à produire des <strong>Schémas Directeurs Système d'Information ou des Schémas Directeurs du Numérique</strong>. Ces documents vous permettent de définir la vision, les objectifs, les principes et les orientations de votre système d'information, ainsi que le plan d'actions et le budget associés pour les réaliser. Nous accompagnons aussi la mise en œuvre opérationnelle du Schéma Directeur.
+                </li>
+                <li>
+                    Des missions d'<strong>Audit des Systèmes d'Information</strong> visant à évaluer la performance, la qualité, la sécurité et la conformité de votre système d'information. Nous vous fournissons un diagnostic complet et des recommandations pour optimiser votre système d'information et le rendre plus efficace, plus fiable et plus adapté à vos besoins.
+                </li>
+                <li>
+                    Des missions de <strong>Conseil en Organisation et en Gouvernance des Systèmes d'Information</strong> visant à vous aider à définir et à mettre en place l'organisation structurelle, les processus, les rôles et les responsabilités nécessaires pour assurer un management efficace et efficient de votre système d'information, pour en maximiser la création de valeur pour votre organisation. Nous vous aidons également à aligner votre système d'information sur votre stratégie métier et à favoriser l'innovation et la transformation numérique. De même, nous vous accompagnons vers la mesure et la maîtrise de la valeur économique de votre Système d'Information.
+                </li>
+            </ul>
+
+            <p class="text-footer">Nous disposons d'une équipe de consultants expérimentés et certifiés dans le domaine du management du système d'information. Nous vous offrons une approche personnalisée, pragmatique et orientée résultats. Nous nous appuyons sur les meilleures pratiques du marché, telles que ITIL, COBIT, CISA, CMMI ou ISO 27001.</p>
+        </div>
+    </div>
+</section>
+
+<style>
+    .management-section {
+    background-color: #F8FAFC; /* Gris très clair du fond */
+    padding: 90px 0;
+    font-family: 'Aptos', sans-serif;
+}
+
+.container-management {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 380px 1fr; /* Largeur du menu vs contenu */
+    gap: 60px;
+    padding: 0 20px;
+}
+
+/* --- MENU GAUCHE & LIGNE --- */
+.management-sidebar {
+    position: relative;
+}
+
+.vertical-nav-line {
+    position: absolute;
+    left: 7px; /* Alignement parfait avec les points */
+    top: 10px;
+    bottom: 10px;
+    width: 1px;
+    background-color: #D1D5DB; /* Gris de la ligne */
+    z-index: 1;
+}
+
+.tabs-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.tab-item {
+    position: relative;
+    padding-left: 35px;
+    padding-bottom: 30px;
+    color: #6B7280; /* Gris pour les non-actifs */
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    line-height: 1.4;
+}
+
+.dot {
+    position: absolute;
+    left: 0;
+    top: 4px;
+    width: 15px;
+    height: 15px;
+    background-color: #D1D5DB; /* Couleur point inactif */
+    border-radius: 50%;
+    border: 2px solid #F8FAFC; /* Pour couper la ligne proprement */
+}
+
+/* Style de l'élément Actif */
+.tab-item.active {
+    color: #00A3DA;
+    font-weight: 700;
+}
+
+.tab-item.active .dot {
+    background-color: #00A3DA;
+    box-shadow: 0 0 0 4px #F8FAFC, 0 0 0 6px #00A3DA; /* Le double cercle bleu */
+}
+
+/* --- CONTENU DROITE --- */
+.content-title {
+    font-size: 34px;
+    font-weight: 800;
+    color: #111;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.text-intro, .text-footer {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #374151;
+    margin-bottom: 25px;
+}
+
+.text-sub-intro {
+    font-weight: 700;
+    font-style: italic;
+    margin-bottom: 20px;
+    color: #374151;
+}
+
+/* LES CHECKMARKS BLEUES */
+.details-check-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.details-check-list li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 20px;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #374151;
+}
+
+.details-check-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #00A3DA;
+    font-weight: 900;
+    font-size: 18px;
+}
+
+.details-check-list strong {
+    color: #111;
+}
+</style>
