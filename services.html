@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iokeo - Transformation Business</title>
     <link rel="stylesheet" href="style.css">
-    
 </head>
 <body>
+
+<!-- HEADER : NAVBAR PRINCIPALE -->
 <header class="navbar">
     <div class="container nav-wrapper">
-        
         <a href="/" class="logo">
             <img src="logo.svg" alt="iokeo business transformation">
         </a>
@@ -21,237 +21,479 @@
             <span></span>
         </div>
 
-        <nav class="nav-links" id="nav-links">
+        <nav class="nav-links">
             <ul>
-                <li><a href="#accueil" class="nav-item active">Accueil</a></li>
+                <li><a href="index.html" class="nav-item ">Accueil</a></li>
                 <li><a href="a-propos.html" class="nav-item">A propos</a></li>
-                <li><a href="#" class="nav-item">Services</a></li>
-                <li><a href="#" class="nav-item">Contacts</a></li>
+                <li><a href="services.html" class="nav-item active">Services</a></li>
+                <li><a href="contacts.html" class="nav-item">Contacts</a></li>
             </ul>
         </nav>
+
         <div class="btn-general">
-<div class="mobile-cta">
-            <a href="#" class="btn-message">Envoyez un message</a>
-        </div>
+            <div class="mobile-cta">
+                <a href="#" class="btn-message">Envoyez un message</a>
+            </div>
         </div>
     </div>
 </header>
-    <main>
+  <style>
+       
+    /* --- STYLE GÉNÉRAL & POLICE --- */
+    body {
+        margin: 0;
+        font-family: 'Aptos', Segoe UI, sans-serif;
+        background-color: #FFFFFF;
+    }
 
-<section class="services-banner">
-    <div class="banner-content">
-        <h1>Nos services</h1>
-    </div>
-</section>
-<style>
- .services-banner {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('image/img11.png');
-    
-    background-size: cover;       /* L'image remplit tout l'espace */
-    background-position: center;  /* L'image reste centrée visuellement */
-    background-repeat: no-repeat;
-    
-    /* --- LES MODIFICATIONS POUR ÉLARGIR --- */
-    width: 100vw;                 /* Force la largeur à 100% de la fenêtre (Viewport Width) */
-    position: relative;           /* Parfois nécessaire si le parent a un padding */
-    left: 50%;                    /* Centre la section si elle est dans un container */
-    transform: translateX(-50%);  /* Centre la section si elle est dans un container */
-    /* -------------------------------------- */
-    
-    height: 500px;                /* Hauteur fixe pour bien voir la case */
-    display: flex;                /* Pour centrer le texte */
-    align-items: center;          /* Centrage vertical */
-    justify-content: center;      /* Centrage horizontal */
-}
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
 
-.banner-content h1 {
-    font-family: 'Aptos', sans-serif;
-    font-size: 64px;
-    font-weight: 800;
-    color: #FFFFFF;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4); /* Ombre pour la lisibilité */
-    margin: 0;
-}
-</style>
-
-<section class="management-section">
-    <div class="container-management">
-        
-        <div class="management-sidebar">
-            <div class="vertical-nav-line"></div>
-            <ul class="tabs-list">
-                <li class="tab-item active" data-tab="management-si">
-                    <span class="dot"></span>
-                    Management SI
-                </li>
-                <li class="tab-item" data-tab="gestion-projets">
-                    <span class="dot"></span>
-                    Management des projets
-                </li>
-                <li class="tab-item" data-tab="si-doc">
-                    <span class="dot"></span>
-                    Systèmes d'Information Documentaires et Collaboratifs Open Source
-                </li>
-                <li class="tab-item" data-tab="ingenierie">
-                    <span class="dot"></span>
-                    Ingénierie d'applications métier cross-plateforme
-                </li>
-                <li class="tab-item" data-tab="transfo-num">
-                    <span class="dot"></span>
-                    Transformation numérique des processus internes avec Microsoft 365
-                </li>
-                <li class="tab-item" data-tab="bi-power">
-                    <span class="dot"></span>
-                    BI avec Microsoft Power BI et Management de la performance
-                </li>
-            </ul>
-        </div>
-
-        <div class="management-content">
-            <h2 class="content-title">Management SI</h2>
-            
-            <p class="text-intro">IOKEO vous propose une offre de service dédiée au management du système d'information. Nous vous accompagnons dans la définition, la mise en œuvre et le pilotage de votre stratégie système d'information, en tenant compte de vos besoins métiers, de vos contraintes techniques, de vos enjeux économiques et de votre contexte sectoriel ou industriel.</p>
-            
-            <p class="text-sub-intro">Nos prestations de service sous cette offre comprennent :</p>
-            
-            <ul class="details-check-list">
-                <li>
-                    Des missions de conseil en stratégie système d'information visant à produire des <strong>Schémas Directeurs Système d'Information ou des Schémas Directeurs du Numérique</strong>. Ces documents vous permettent de définir la vision, les objectifs, les principes et les orientations de votre système d'information, ainsi que le plan d'actions et le budget associés pour les réaliser. Nous accompagnons aussi la mise en œuvre opérationnelle du Schéma Directeur.
-                </li>
-                <li>
-                    Des missions d'<strong>Audit des Systèmes d'Information</strong> visant à évaluer la performance, la qualité, la sécurité et la conformité de votre système d'information. Nous vous fournissons un diagnostic complet et des recommandations pour optimiser votre système d'information et le rendre plus efficace, plus fiable et plus adapté à vos besoins.
-                </li>
-                <li>
-                    Des missions de <strong>Conseil en Organisation et en Gouvernance des Systèmes d'Information</strong> visant à vous aider à définir et à mettre en place l'organisation structurelle, les processus, les rôles et les responsabilités nécessaires pour assurer un management efficace et efficient de votre système d'information, pour en maximiser la création de valeur pour votre organisation. Nous vous aidons également à aligner votre système d'information sur votre stratégie métier et à favoriser l'innovation et la transformation numérique. De même, nous vous accompagnons vers la mesure et la maîtrise de la valeur économique de votre Système d'Information.
-                </li>
-            </ul>
-
-            <p class="text-footer">Nous disposons d'une équipe de consultants expérimentés et certifiés dans le domaine du management du système d'information. Nous vous offrons une approche personnalisée, pragmatique et orientée résultats. Nous nous appuyons sur les meilleures pratiques du marché, telles que ITIL, COBIT, CISA, CMMI ou ISO 27001.</p>
-        </div>
-    </div>
-</section>
-
-<style>
+    /* --- SECTION MANAGEMENT (TABS) --- */
     .management-section {
-    background-color: #F8FAFC; /* Gris très clair du fond */
-    padding: 90px 0;
-    font-family: 'Aptos', sans-serif;
-}
+        background-color: #F8FAFC;
+        padding: 80px 0;
+    }
 
-.container-management {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 380px 1fr; /* Largeur du menu vs contenu */
-    gap: 60px;
-    padding: 0 20px;
-}
+    .container-management {
+        display: grid;
+        grid-template-columns: 350px 1fr;
+        gap: 80px;
+        align-items: start;
+    }
 
-/* --- MENU GAUCHE & LIGNE --- */
-.management-sidebar {
-    position: relative;
-}
+    /* --- BARRE DE NAVIGATION VERTICALE (CORRIGÉE) --- */
+    .management-sidebar {
+        position: relative;
+        /* La ligne grise de fond est maintenant à droite du texte */
+        border-right: 2px solid #E2E8F0; 
+        padding-right: 0;
+    }
 
-.vertical-nav-line {
-    position: absolute;
-    left: 7px; /* Alignement parfait avec les points */
-    top: 10px;
-    bottom: 10px;
-    width: 1px;
-    background-color: #D1D5DB; /* Gris de la ligne */
-    z-index: 1;
-}
+    .tabs-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
 
-.tabs-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    position: relative;
-    z-index: 2;
-}
+    .tab-item {
+        position: relative;
+        padding: 15px 30px 15px 0; /* Espace pour le texte à gauche de la ligne */
+        color: #64748B;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: color 0.3s ease;
+        line-height: 1.3;
+        text-align: left;
+    }
 
-.tab-item {
-    position: relative;
-    padding-left: 35px;
-    padding-bottom: 30px;
-    color: #6B7280; /* Gris pour les non-actifs */
-    font-size: 15px;
-    font-weight: 500;
-    cursor: pointer;
-    line-height: 1.4;
-}
+    /* Le point gris/bleu sur la ligne de droite */
+    .tab-item::after {
+        content: '';
+        position: absolute;
+        right: -9px; /* Centré exactement sur la bordure de droite */
+        top: 50%;
+        transform: translateY(-50%);
+        width: 16px;
+        height: 16px;
+        background-color: #CBD5E1;
+        border: 3px solid #F8FAFC;
+        border-radius: 50%;
+        z-index: 2;
+        transition: all 0.3s ease;
+    }
 
-.dot {
-    position: absolute;
-    left: 0;
-    top: 4px;
-    width: 15px;
-    height: 15px;
-    background-color: #D1D5DB; /* Couleur point inactif */
-    border-radius: 50%;
-    border: 2px solid #F8FAFC; /* Pour couper la ligne proprement */
-}
+    /* État Actif */
+    .tab-item.active {
+        color: #00A3DA;
+    }
 
-/* Style de l'élément Actif */
-.tab-item.active {
-    color: #00A3DA;
-    font-weight: 700;
-}
+    .tab-item.active::after {
+        background-color: #00A3DA;
+        box-shadow: 0 0 0 3px rgba(0, 163, 218, 0.2);
+        transform: translateY(-50%) scale(1.2);
+    }
 
-.tab-item.active .dot {
-    background-color: #00A3DA;
-    box-shadow: 0 0 0 4px #F8FAFC, 0 0 0 6px #00A3DA; /* Le double cercle bleu */
-}
+    /* La barre bleue d'activation qui glisse (Indicateur) */
+    .active-indicator {
+        position: absolute;
+        right: -2px; /* Colle à la bordure de droite */
+        width: 3px;
+        background-color: #00A3DA;
+        z-index: 3;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
 
-/* --- CONTENU DROITE --- */
-.content-title {
-    font-size: 34px;
-    font-weight: 800;
-    color: #111;
-    text-align: center;
-    margin-bottom: 40px;
-}
+    /* --- CONTENU À DROITE & ANIMATION --- */
+    .tab-pane {
+        display: none;
+        opacity: 0;
+        /* Animation de bas en haut uniquement */
+        transform: translateY(15px); 
+        transition: all 0.5s ease;
+    }
 
-.text-intro, .text-footer {
-    font-size: 16px;
-    line-height: 1.7;
-    color: #374151;
-    margin-bottom: 25px;
-}
+    .tab-pane.active {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+    }
 
-.text-sub-intro {
-    font-weight: 700;
-    font-style: italic;
-    margin-bottom: 20px;
-    color: #374151;
-}
+    .content-title {
+        font-size: 42px;
+        font-weight: 800;
+        color: #1E293B;
+        margin-bottom: 35px;
+    }
 
-/* LES CHECKMARKS BLEUES */
-.details-check-list {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 30px;
-}
+    /* Style identique pour les listes */
+    .details-check-list {
+        list-style: none;
+        padding: 0;
+    }
 
-.details-check-list li {
-    position: relative;
-    padding-left: 30px;
-    margin-bottom: 20px;
-    font-size: 15px;
-    line-height: 1.6;
-    color: #374151;
-}
+    .details-check-list li {
+        position: relative;
+        padding-left: 35px;
+        margin-bottom: 20px;
+        font-size: 16px;
+        line-height: 1.7;
+        color: #475569;
+    }
 
-.details-check-list li::before {
-    content: '✓';
-    position: absolute;
-    left: 0;
-    color: #00A3DA;
-    font-weight: 900;
-    font-size: 18px;
-}
+    .details-check-list li::before {
+        content: '✓';
+        position: absolute;
+        left: 0;
+        color: #00A3DA;
+        font-weight: 900;
+        font-size: 20px;
+    }
 
-.details-check-list strong {
-    color: #111;
-}
-</style>
+    strong { color: #1E293B; }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+        .container-management {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+        .management-sidebar {
+            border-right: none;
+            border-bottom: 2px solid #E2E8F0;
+        }
+        .tab-item::after, .active-indicator { display: none; }
+    }
+
+
+        /* --- BANNIÈRE SERVICES --- */
+        .services-banner {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('image/img11.png');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .services-banner h1 {
+            font-size: 64px;
+            font-weight: 800;
+            margin: 0;
+        }
+
+        
+    </style>
+</head>
+<body>
+
+<main>
+    <section class="services-banner">
+        <h1>Nos services</h1>
+    </section>
+
+    <section class="management-section">
+        <div class="container container-management">
+
+            <aside class="management-sidebar">
+                <div class="vertical-nav-line"></div>
+                <ul class="tabs-list">
+                    <li class="tab-item active" data-target="management-si">
+                        <span class="dot"></span> Management SI
+                    </li>
+                    <li class="tab-item" data-target="gestion-projets">
+                        <span class="dot"></span> Management des projets
+                    </li>
+                    <li class="tab-item" data-target="si-doc">
+                        <span class="dot"></span> Systèmes d'Information Documentaires et Collaboratifs Open Source
+                    </li>
+                    <li class="tab-item" data-target="ingenierie">
+                        <span class="dot"></span> Ingénierie d'applications métier cross-plateforme
+                    </li>
+                    <li class="tab-item" data-target="transfo-num">
+                        <span class="dot"></span> Transformation numérique des processus internes avec Microsoft 365
+                    </li>
+                    <li class="tab-item" data-target="bi-power">
+                        <span class="dot"></span> BI avec Microsoft Power BI et Management de La performance
+                    </li>
+                </ul>
+            </aside>
+
+         <article class="management-content" id="display-area">
+    
+    <div class="tab-pane active" id="management-si">
+    <h2 class="content-title">Management SI</h2>
+    
+    <p class="text-intro">
+        IOKEO vous propose une offre de service dédiée au management du système d'information. Nous vous accompagnons dans la définition, la mise en œuvre et le pilotage de votre stratégie système d'information, en tenant compte de vos besoins métiers, de vos contraintes techniques, de vos enjeux économiques et de votre contexte sectoriel ou industriel.
+    </p>
+
+    <p class="text-sub-intro">Nos prestations de service sous cette offre comprennent :</p>
+
+    <ul class="details-check-list">
+        <li>
+            Des missions de <strong>conseil en stratégie système d'information</strong> visant à produire des <strong>Schémas Directeurs Système d'Information ou des Schémas Directeurs du Numérique</strong>. Ces documents vous permettent de définir la vision, les objectifs, les principes et les orientations de votre système d'information, ainsi que le plan d'actions et le budget associés pour les réaliser. Nous accompagnons aussi la mise en œuvre opérationnelle du Schéma Directeur.
+        </li>
+        <li>
+            Des missions d'<strong>Audit des Systèmes d'Information</strong> visant à évaluer la performance, la qualité, la sécurité et la conformité de votre système d'information. Nous vous fournissons un diagnostic complet et des recommandations pour optimiser votre système d'information et le rendre plus efficace, plus fiable et plus adapté à vos besoins.
+        </li>
+        <li>
+            Des missions de <strong>Conseil en Organisation et en Gouvernance des Systèmes d'Information</strong> visant à vous aider à définir et à mettre en place l'organisation structurelle, les processus, les rôles et les responsabilités nécessaires pour assurer un management efficace et efficient de votre système d'information, pour en maximiser la création de valeur pour votre organisation. Nous vous aidons également à aligner votre système d'information sur votre stratégie métier et à favoriser l'innovation et la transformation numérique. De même, nous vous accompagnons vers la mesure et la maîtrise de la valeur économique de votre Système d'Information.
+        </li>
+    </ul>
+
+    <p class="text-footer">
+        Nous disposons d'une équipe de consultants expérimentés et certifiés dans le domaine du management du système d'information. Nous vous offrons une approche personnalisée, pragmatique et orientée résultats. Nous nous appuyons sur les meilleures pratiques du marché, telles que ITIL, COBIT, CISA, CMMI ou ISO 27001.
+    </p>
+</div>
+   <div class="tab-pane" id="gestion-projets">
+    <h2 class="content-title">Management des Projets</h2>
+    
+    <p class="text-intro">
+        Chez IOKEO, nous vous accompagnons dans la réussite de vos projets Systèmes d'Information, qu'ils soient d'optimisation, de développement ou de transformation. Nous vous proposons des prestations de services adaptées à vos besoins et à votre contexte, en mobilisant nos compétences en management de projet et s'appuyant sur notre expérience internationale.
+    </p>
+
+    <p class="text-sub-intro">Notre offre de service "Management des Projets" comprend les prestations suivantes :</p>
+
+    <ul class="details-check-list">
+        <li>
+            <strong>Accompagnement en Avant-projet :</strong> nous vous aidons à préparer votre projet Système d'Information en toute sérénité. Nous vous accompagnons dans la définition de votre besoin, la conception de votre solution, l'estimation de votre budget et de votre délai, et l'élaboration de votre dossier de consultation des entreprises. Nous vous aidons à adresser les points clés suivants : Formulation des objectifs et attentes, contraintes et opportunités de votre contexte unique, exigences de la solution adaptée à votre problématique, coûts et délais, élaboration des Termes de Références, cahiers de charge et tous les documents constitutifs sur Dossier de Consultation des Entreprises. Nous vous accompagnons aussi dans le processus de sélection des prestataires.
+        </li>
+        <li>
+            <strong>Assistance à maîtrise d'ouvrage :</strong> nous vous conseillons et vous représentons dans la relation avec vos prestataires externes, en veillant au respect du cahier des charges, du planning, du budget et de la qualité. Nous intervenons en amont et tout au long du projet, en apportant notre expertise, méthodologie et nos outils que nous adaptons à vos besoins et contextes uniques. Cadrons la conduite du changement avec vous et accompagnons le changement dans votre organisation, avec des dispositifs et des méthodes adaptées à votre contexte, culture et vos collaborateurs. En fonction de ces déterminants et tirant les leçons de votre expérience, nous savons nous entourer d'expertises externes en sociologie et psychologie des organisations et du travail, ainsi qu'en ergonomie.
+        </li>
+        <li>
+            <strong>Mise en œuvre de Bureau des Projets (Project Management Office) :</strong> Nous vous offrons un service de support et de coordination pour le management de vos projets. Nous vous aidons à définir et à mettre en œuvre les méthodes, les outils, les normes et les bonnes pratiques de gestion de projet. Nous vous fournissons des tableaux de bord, des rapports d'avancement, des indicateurs de performance et des alertes en cas de dérive.
+        </li>
+    </ul>
+
+    <p class="text-footer">
+        Notre offre de management des projets vous garantit une meilleure maîtrise de vos projets, une optimisation des ressources, une réduction des coûts, une amélioration de la qualité et une satisfaction accrue des parties prenantes.
+    </p>
+</div>
+
+    <div class="tab-pane" id="si-doc">
+    <h2 class="content-title">Systèmes d'Information Documentaires et Collaboratifs Open Source</h2>
+    
+    <div class="content-body">
+        <p class="text-intro">
+            Nous disposons d'une solide expertise et une bonne expérience de la mise en œuvre de solutions de Gestion Electronique de Documents (GED), de Gestion Electronique de Courrier (GEC), de Gestion par Dossier ou par Affaire ("Case Management"). Ces solutions vous permettent de gérer le cycle de vie de vos documents, de sécuriser leur conservation et leur traçabilité, et de respecter les normes légales et réglementaires.
+        </p>
+
+        <p class="text-intro">
+            Nous avons acquis une maitrise technologique des plateformes que nous déployons et notre expérience nous enseigne que ces projets sont plus des projets d'organisation (voire même des projets métiers) que des projets techniques. Aussi notre méthodologie vise à mettre en place les dispositifs d'accompagnement au changement dès le premier jour du projet.
+        </p>
+
+        <p class="text-intro">
+            Pour faciliter la transition vers le "less paper" (moins de papier dans une logique de dématérialisation partielle), voire vers "paperless" (processus entièrement digitalisé), nous accompagnons les opérations de réorganisation et de reprise de l'existant. A cet effet, nous disposons d'expertises en sciences et techniques documentaires. Cela nous permet aussi de vous équiper avec les outils métiers de gestion documentaire et les paramétrer dans votre solution.
+        </p>
+
+        <p class="text-intro">
+            Nous approchons les Systèmes d'Information Documentaires et Collaboratifs avec des solutions open source dont nous avons une maitrise technologique afin de vous assurer la meilleure intégration possible au regard de vos besoins, contextes et usages.
+        </p>
+    </div>
+</div>
+
+  <div class="tab-pane" id="ingenierie">
+    <h2 class="content-title">Ingénierie d'applications métier cross-plateforme</h2>
+    
+    <div class="content-body">
+        <p class="text-intro">
+            Nous adoptons une approche unifiée pour concevoir des applications métier qui partagent une base de code commune tout en offrant une expérience utilisateur native sur chaque plateforme. Chez IOKEO, l'ingénierie logicielle est bien plus qu'un simple processus technique. Nous nous sommes appropriés et promouvons les principes de l'artisanat logiciel et les pratiques de la culture DevOps :<br>
+            <strong>Excellence Technique :</strong> Nous nous engageons à produire un code de qualité supérieure. Nos développeurs sont des artisans du logiciel, passionnés par l'élégance et la performance.<br>
+            <strong>Flexibilité :</strong> Que vous ayez besoin d'une application mobile, web ou desktop, nous sommes là pour vous. Notre expertise s'étend à travers les plateformes mobile (Android, iOS, USSD), web ou desktop (Windows, Linux, Mac).<br>
+            <strong>Collaboration :</strong> Nous croyons en la co-création avec nos clients. Votre vision est notre boussole, et nous travaillons main dans la main pour réaliser vos objectifs.
+        </p>
+
+        <p class="text-sub-intro">Notre approche méthodologique s'articule autour de 5 piliers :</p>
+
+        <ol class="numbered-blue-list">
+            <li><strong>Analyse Approfondie :</strong> Nous commençons par comprendre vos besoins métier, vos objectifs, vos contraintes. Nous anticipons les évolutions des usages et en tirons des éléments contribuant aux décisions à prendre pendant de conception.</li>
+            <li><strong>Conception Élégante :</strong> Notre équipe d'architectes logiciels conçoit des solutions qui allient simplicité et puissance. Nous maîtrisons plusieurs piles technologiques pour répondre à vos besoins spécifiques.</li>
+            <li><strong>Développement Agile :</strong> Nous travaillons en sprints courts, livrant des fonctionnalités à chaque étape. Votre feedback guide notre progression.</li>
+            <li><strong>Tests Rigoureux :</strong> La qualité est notre priorité. Nous testons minutieusement chaque fonctionnalité pour garantir une performance sans faille.</li>
+            <li><strong>Déploiement Continu :</strong> Grâce à DevOps, nous automatisons le déploiement et la maintenance. Votre application est toujours à jour et sécurisée.</li>
+        </ol>
+
+        <p class="text-intro">
+            Les avantages de cette approche d'ingénierie génèrent des gains autant pour vous que pour nous : <strong>Réduction des Coûts</strong> : Notre approche cross-plateforme permet d'économiser du temps et des ressources. Une seule base de code pour plusieurs plateformes signifie moins de maintenance et des déploiements plus rapides.
+        </p>
+
+        <p class="text-intro">
+            <strong>Expérience Utilisateur Cohérente :</strong> Vos utilisateurs méritent une expérience homogène, quel que soit le dispositif. Grâce à notre expertise, nous créons des applications qui se sentent chez elles sur tous les écrans.<br>
+            <strong>Agilité :</strong> Nous sommes adaptés des méthodes Agile et des préceptes DevOps. Les itérations rapides, les tests continus et l'intégration continue font partie de notre ADN.
+        </p>
+    </div>
+</div>
+
+  <div class="tab-pane" id="transfo-num">
+    <h2 class="content-title">Transformation numérique des processus internes avec Microsoft 365</h2>
+    
+    <div class="content-body">
+        <p class="text-intro">
+            <strong>Ingénierie d'applications pour la productivité et la collaboration avec le cloud Microsoft 365 :</strong> Nous avons une expertise approfondie du cloud Microsoft 365 en général et des plateforme SharePoint et Teams en particulier, et nous sommes en mesure de vous aider à développer des applications personnalisées qui répondent à vos besoins spécifiques.
+        </p>
+
+        <p class="text-sub-intro">Nos services de développement d'applications SharePoint et Teams comprennent :</p>
+
+        <ul class="details-check-list">
+            <li>La conception et la réalisation d'applications SharePoint personnalisées, telles que des intranets, des extranets, des portails de ressources, etc.</li>
+            <li>La création d'applications Teams personnalisées, telles que des bots, des applications personnalisées, des flux de travail, etc.</li>
+        </ul>
+
+        <p class="text-intro">
+            Notre expérience de l'ingénierie du cloud Microsoft 365 sur le marché nous a incité à inclure dans cette offre un accompagnement sur le licensing de Microsoft 365 : l'objectif est d'accompagner nos clients et prospects dans la projection, la réalisation et la mesure de la création de valeur avec Microsoft 365.
+        </p>
+
+        <p class="text-intro">
+            <strong>Robotique Logicielle (Robotic Process Automation) :</strong><br>
+            La RPA, ou robotique logicielle, est votre alliée pour automatiser les tâches fastidieuses et répétitives au sein de votre organisation. Ainsi, vous pouvez disposer d'un virtuel qui extrait les données, remplit les formulaires et déplace les fichiers, le tout sans intervention humaine. Grâce à des scripts intelligents, la RPA combine vos applications et des interactions d'interface utilisateur pour intégrer et exécuter des tâches entre vos différentes applications. Vous ainsi gagnez en efficacité, en précision et en productivité, libérant ainsi vos équipes pour des missions à plus forte valeur ajoutée.
+        </p>
+
+        <p class="text-intro">
+            De ce fait, la RPA est un levier de la transformation de vos processus vers plus d'automatisation.
+        </p>
+
+        <p class="text-intro">
+            Nous vous accompagnons dans l'intégration de vos flux de travail automatisés avec la robotique logicielle avec des applications métiers disposant d'API conformes aux standards d'architecture applicative dans l'industrie. Nous vous aidons à connecter vos flux de travail avec des sources de données variées, telles que des bases de données, des fichiers Excel, des services cloud, etc. Nous vous conseillons également sur les bonnes pratiques de sécurité et de performance.<br>
+            IOKEO a développé une expertise de la solution Microsoft Power Desktop Automate. N'hésitez pas à nous contacter pour une démo.
+        </p>
+    </div>
+</div>
+
+    <div class="tab-pane" id="bi-power">
+    <h2 class="content-title">BI avec Microsoft Power BI et Management de la performance</h2>
+    
+    <div class="content-body">
+        <p class="text-intro">
+            Nous vous accompagnons de bout en bout sur vos enjeux de management de la performance économique et opérationnelle : Notre offre de Business Intelligence (BI ou Informatique Décisionnelle) est conçue pour vous aider à exploiter pleinement le potentiel de vos données, à prendre des décisions éclairées et à optimiser vos performances économiques et opérationnelles.
+        </p>
+
+        <p class="text-intro">
+            <strong>Business Intelligence et Analytics</strong><br>
+            Avec la maîtrise technologique de différentes plateformes dont des solutions open source, nous sommes toujours en capacité de vous proposer la solution la mieux adaptée à vos besoins et contextes uniques à votre organisation, optimisant toutes les étapes d'une chaîne BI automatisée, de la collecte des données jusqu'à leur visualisation.
+        </p>
+
+        <ul class="details-check-list">
+            <li><strong>Conception des KPI :</strong> Nous vous apportons notre expertise dans la conception et la réalisation des outils de mesure et de pilotage de votre performance. Nous vous aidons à définir les KPI pertinents pour évaluer l'efficacité, l'efficience, la qualité, la satisfaction, etc. de vos activités.</li>
+            <li><strong>Collecter et Centraliser les Données :</strong> Nous agrégeons vos données provenant de diverses sources métier pour créer un tableau de bord complet de votre activité.</li>
+            <li><strong>Analyser et Visualiser :</strong> Grâce à des outils puissants, nous transformons ces données en informations exploitables. Des graphiques interactifs aux rapports détaillés, vous aurez une vue claire de votre performance. Nous vous accompagnons dans la création des tableaux de bord et de rapports adaptés à vos besoins, à vos publics cibles, à vos supports de diffusion, etc. Nous vous assistons dans l'élaboration de modèles des rapports synthétiques et clairs pour communiquer sur votre performance.</li>
+        </ul>
+
+        <p class="text-intro">
+            <strong>Ingénierie de processus :</strong><br>
+            Nous analysons vos processus et vos pratiques, et utilisons des méthodes et langages de modélisation pour décrire de manière formelle vos processus actuels. Vos besoins nous permettent de modéliser vos processus futurs, qui orienteront des évolutions dans vos pratiques et dans votre Système d'Information.
+        </p>
+
+        <ul class="details-check-list">
+            <li><strong>Optimisation de vos processus :</strong> Nous analysons les dysfonctionnements, mettons en place une démarche d'amélioration continue et établissons une trajectoire prévisionnelle de l'output de votre activité à moyen et long terme. Nous formulons des propositions d'optimisation de vos processus et de votre système de gestion pour un pilotage adapté.</li>
+            <li><strong>Fiabilisation de vos processus :</strong> Nous décomposons et analysons chaque étape de vos processus métier pour garantir la sécurité, la qualité, l'efficacité et la prédictibilité.</li>
+            <li><strong>Amélioration continue :</strong> nous accompagnons votre organisation dans le choix, l'adaptation et le déploiement de dispositifs, méthodes et outils support pour l'amélioration continue de vos processus. Au-delà des livrables tangibles, notre objectif reste toujours d'accompagner votre organisation vers l'acquisition et l'ancrage d'une culture de l'amélioration continue.</li>
+        </ul>
+    </div>
+</div>
+</article>
+        </div>
+    </section>
+</main>
+
+<script>
+    // SCRIPT DE GESTION DES ONGLETS
+    document.addEventListener('DOMContentLoaded', () => {
+        const tabItems = document.querySelectorAll('.tab-item');
+        const tabPanes = document.querySelectorAll('.tab-pane');
+
+        tabItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const targetId = item.getAttribute('data-target');
+
+                // 1. Désactiver tous les onglets
+                tabItems.forEach(tab => tab.classList.remove('active'));
+                // 2. Cacher tous les contenus
+                tabPanes.forEach(pane => pane.classList.remove('active'));
+
+                // 3. Activer l'onglet cliqué
+                item.classList.add('active');
+                // 4. Afficher le contenu correspondant
+                document.getElementById(targetId).classList.add('active');
+
+                // Optionnel : Scroll fluide vers le titre sur petit écran
+                if(window.innerWidth < 992) {
+                    document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    });
+</script>
+
+
+
+
+
+
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="container footer-wrapper">
+        <div class="footer-brand">
+            <img src="img7.svg" alt="iokeo business transformation">
+            <p class="footer-desc">Chez IOKEO, nous accompagnons les entreprises et institutions à chaque étape de leur transformation à travers des stratégies claires, des processus efficaces et des systèmes.</p>
+            <div class="social-links">
+                <a href="#"><img src="img.svg" alt="LinkedIn"></a>
+            </div>
+        </div>
+        <div class="footer-nav">
+            <h4>PAGES</h4>
+            <ul>
+                <li><a href="#">Acceuil</a></li>
+                <li><a href="#">A propos</a></li>
+                <li><a href="#">Services</a></li>
+            </ul>
+        </div>
+        <div class="footer-contact">
+            <h4>CONTACT</h4>
+            <p>18, rue 9006 Houénoussou Sainte-Rita</p>
+            <p><a href="mailto:contact@iokeo.com">contact@iokeo.com</a></p>
+            <p><a href="tel:+2290162419710">(+229) 01 62 41 97 10</a></p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <p>
+                <span>© 2025 iokeo</span>
+                <span class="separator">•</span>
+                <a href="#">Privacy Policy</a>
+                <span class="separator">•</span>
+                <a href="#">Terms & Conditions</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

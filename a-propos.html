@@ -5,7 +5,357 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iokeo - Transformation Business</title>
     <link rel="stylesheet" href="style.css">
-    
+    <style>
+        /* --- SECTION HERO --- */
+        .hero-image-container {
+            position: relative;
+            width: 100%;
+            height: 700px; /* Hauteur de la frame Figma */
+            display: flex;
+            align-items: flex-end; /* Centre verticalement le bloc */
+            overflow: hidden;
+        }
+
+        .hero-bg-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /*  object-fit: cover; */
+            z-index: 1;
+        }
+
+        .hero-text-overlay {
+            position: absolute; /* Sort du flux pour se placer librement */
+            z-index: 10;
+
+            /* Coordonnées pour le caler en bas à gauche */
+            bottom: 80px;  /* Distance depuis le bas de l'image */
+            left: 80px;    /* Distance depuis le bord gauche de l'écran */
+
+            width: auto;   /* Laisse la glass-box définir la largeur */
+        }
+
+        .glass-box {
+            width: 700px;
+            height: 300px;
+
+            /* Effet Glassmorphism Figma */
+            background: linear-gradient(0deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4));
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+
+            padding: 1px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;   /* Aligne titre et texte l'un sous l'autre */
+            justify-content: center;  /* Centre verticalement */
+            align-items: center;      /* Centre horizontalement */
+            text-align: center;
+        }
+
+        /* --- TYPOGRAPHIE --- */
+        .main-heading {
+            font-size: 40px;
+            font-weight: 700;
+            color: #1A1A1A;
+
+            width: 100%;
+            display: block;
+
+            text-align: left;
+            padding-left: 135px;
+            margin-bottom: 24px;
+
+            font-family: "Aptos";
+            font-weight: 700;
+        }
+
+        .about-description {
+            font-family: "Aptos", sans-serif;
+            font-size: 15px;
+            line-height: 1.3; /* Correspond au 130% */
+            color: rgba(35, 35, 35, 1);
+
+            text-align: justify;
+            max-width: 645px;
+        }
+
+        /* --- SECTION ENGAGEMENT --- */
+        .engagement-grid {
+            display: flex;
+            align-items: center; /* Centre verticalement l'image et le texte */
+            justify-content: space-between;
+            gap: 60px; /* Espace entre l'image et le texte */
+            padding: 80px 0;
+        }
+
+        /* --- L'IMAGE (Specs Figma) --- */
+        .engagement-image {
+            flex: 0 0 771px; /* Force la largeur exacte de 771px */
+        }
+
+        .engagement-image img {
+            width: 771px;
+            height: 411px; /* Hauteur exacte Figma */
+            object-fit: cover;
+            border-radius: 20px; /* Correspond au "Image Radius" Figma */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        /* --- LE CONTENU TEXTUEL --- */
+        .engagement-content {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .sub-heading {
+            font-family: "Aptos", sans-serif;
+            font-weight: 700;
+            font-size: 36px;
+            line-height: 1.2;
+            color: #1A1A1A;
+            margin-bottom: 24px;
+        }
+
+        .engagement-content p {
+            font-family: "Aptos", sans-serif;
+            font-size: 18px;
+            line-height: 1.6;
+            color: #4A4A4A;
+            text-align: justify;
+        }
+
+        /* --- ADAPTATION MOBILE --- */
+        @media (max-width: 1024px) {
+            .engagement-grid {
+                flex-direction: column; /* Empile sur tablette/mobile */
+                text-align: center;
+            }
+
+            .engagement-image, .engagement-image img {
+                width: 100%;
+                height: auto;
+                flex: none;
+            }
+        }
+
+        /* --- SECTION VALEURS --- */
+        .values-section {
+            position: relative;
+            padding: 80px 0;
+            min-height: 600px;
+        }
+
+        /* Positionnement des piliers comme sur ta photo */
+        .pillar-left, .pillar-right {
+            position: absolute;
+            top: 50px; /* Aligné un peu plus haut */
+            width: 500px; /* Augmenté pour plus de présence */
+            z-index: 1;
+        }
+
+        .pillar-left {
+            left: 10px; /* Rapproché du bord de l'écran */
+        }
+
+        .pillar-right {
+            right: 10px; /* Rapproché du bord de l'écran */
+        }
+
+        /* On ajuste la marge du contenu pour ne pas que le texte touche les images agrandies */
+        .container-values {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 0 140px; /* Augmenté pour laisser de la place aux grands piliers */
+            z-index: 2;
+            position: relative;
+        }
+
+        .values-main-title {
+            font-family: 'Aptos', sans-serif;
+            font-size: 38px;
+            font-weight: 700;
+            color: #1A1A1A;
+            margin-bottom: 30px;
+        }
+
+        .values-intro {
+            font-family: 'Aptos', sans-serif;
+            font-size: 18px;
+            color: #4A4A4A;
+            margin-bottom: 50px;
+        }
+
+        /* Le style bleu ciel et gras que tu as demandé */
+        .value-title-blue {
+            font-family: 'Aptos', sans-serif;
+            color: #00A3DA; /* Bleu ciel Iokeo */
+            font-weight: 700;
+            font-size: 20px;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .value-text {
+            font-family: 'Aptos', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #555;
+            text-align: left; /* Aligné à gauche comme sur l'image */
+        }
+
+        /* --- SECTION VISION --- */
+        .vision-section {
+            padding: 100px 0;
+            background-color: #fff;
+        }
+
+        .vision-grid {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 80px;
+        }
+
+        .vision-content {
+            flex: 1;
+        }
+
+        /* On réutilise le style du titre précédent */
+        .vision-content .sub-heading {
+            font-family: "Aptos", sans-serif;
+            font-weight: 700;
+            font-size: 42px;
+            margin-bottom: 30px;
+            color: #1A1A1A;
+        }
+
+        .vision-content p {
+            font-family: "Aptos", sans-serif;
+            font-size: 18px;
+            line-height: 1.6;
+            color: #4A4A4A;
+            text-align: justify;
+        }
+
+        /* L'image de droite (mêmes dimensions que l'autre section pour l'harmonie) */
+        .vision-image {
+            flex: 0 0 650px; /* Un peu plus petit que l'autre pour laisser respirer le texte */
+        }
+
+        .vision-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        /* Mobile */
+        @media (max-width: 1024px) {
+            .vision-grid {
+                flex-direction: column-reverse; /* Texte au dessus de l'image sur tel */
+                gap: 40px;
+            }
+            .vision-image {
+                flex: none;
+                width: 100%;
+            }
+        }
+
+        /* --- SECTION INTERVENTION --- */
+        .intervention-section {
+            padding: 100px 0;
+            background-color: #fff;
+        }
+
+        .intervention-grid {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 50px;
+        }
+
+        .intervention-left { flex: 1; }
+        .intervention-right { flex: 1; text-align: right; }
+
+        .intervention-title {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+
+        .intervention-intro {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 50px;
+            line-height: 1.5;
+        }
+
+        /* --- La Timeline --- */
+        .steps-container {
+            position: relative;
+            padding-left: 20px;
+        }
+
+        /* La ligne verticale grise */
+        .steps-container::before {
+            content: '';
+            position: absolute;
+            left: 45px; /* Aligné au centre des cercles */
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background-color: #E0E0E0;
+            z-index: 1;
+        }
+
+        .step-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background-color: #F5F5F5; /* Gris très clair */
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: #333;
+            margin-right: 30px;
+            flex-shrink: 0;
+        }
+
+        .step-text h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin: 0 0 5px 0;
+            color: #1A1A1A;
+        }
+
+        .step-text p {
+            font-size: 16px;
+            color: #666;
+            margin: 0;
+        }
+
+        /* --- La Pyramide --- */
+        .pyramid-img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
 </head>
 <body>
 
@@ -25,10 +375,10 @@
         </div>
 
         <nav class="nav-links" id="nav-links">
-            <ul>
-                <li><a href="#accueil" class="nav-item active">Accueil</a></li>
-                <li><a href="a-propos.html" class="nav-item">A propos</a></li>
-                <li><a href="#" class="nav-item">Services</a></li>
+            <ul> 
+                <li><a href="index.html" class="nav-item">Accueil</a></li>
+                <li><a href="a-propos.html" class="nav-item active">A propos</a></li>
+                <li><a href="services.html" class="nav-item">Services</a></li>
                 <li><a href="#" class="nav-item">Contacts</a></li>
             </ul>
         </nav>
@@ -40,97 +390,6 @@
     </div>
 </header>
     <main>
-<style>
-/* --- SECTION HERO --- */
-.hero-image-container {
-    position: relative;
-    width: 100%;
-    height: 700px; /* Hauteur de la frame Figma */
-    display: flex;
-    align-items: flex-end; /* Centre verticalement le bloc */
-    overflow: hidden;
-}
-
-.hero-bg-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  /*  object-fit: cover; */
-  z-index: 1;
-}
-
-.hero-text-overlay {
-    position: absolute; /* Sort du flux pour se placer librement */
-    z-index: 10;
-    
-    /* Coordonnées pour le caler en bas à gauche */
-    bottom: 80px;  /* Distance depuis le bas de l'image */
-    left: 80px;    /* Distance depuis le bord gauche de l'écran */
-    
-    width: auto;   /* Laisse la glass-box définir la largeur */
-}
-
- 
-
-
-
-
-.glass-box {
-    width: 700px; 
-    height: 300px;
-    
-    /* Effet Glassmorphism Figma */
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4));
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    
-    padding: 1px;
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
-    display: flex;
-    flex-direction: column;   /* Aligne titre et texte l'un sous l'autre */
-    justify-content: center;  /* Centre verticalement */
-    align-items: center;      /* Centre horizontalement */
-    text-align: center;
-}
-
-/* --- TYPOGRAPHIE --- */
-.main-heading {
-    font-size: 40px;
-    font-weight: 700;
-    color: #1A1A1A;
-           
-    width: 100%;             
-    display: block;
-
-    text-align: left;      
-    padding-left: 135px;    
-    margin-bottom: 24px;   
-
-    font-family: "Aptos";
-font-weight: 700;
-
-}
-
-.about-description {
-    font-family: "Aptos", sans-serif;
-    font-size: 15px;
-    line-height: 1.3; /* Correspond au 130% */
-    color: rgba(35, 35, 35, 1);
-
-    text-align: justify;
-    max-width: 645px;
-}
-
-
-
-
-
-</style>
-<main>
 <section class="about-hero-page">
     <div class="hero-image-container">
         <img src="image/img7.png" alt="Transformation Iokeo" class="hero-bg-img">
@@ -147,66 +406,7 @@ font-weight: 700;
 </section>
 
 
-<style>
-    /* --- SECTION ENGAGEMENT --- */
-.engagement-grid {
-    display: flex;
-    align-items: center; /* Centre verticalement l'image et le texte */
-    justify-content: space-between;
-    gap: 60px; /* Espace entre l'image et le texte */
-    padding: 80px 0;
-}
 
-/* --- L'IMAGE (Specs Figma) --- */
-.engagement-image {
-    flex: 0 0 771px; /* Force la largeur exacte de 771px */
-}
-
-.engagement-image img {
-    width: 771px; 
-    height: 411px; /* Hauteur exacte Figma */
-    object-fit: cover;
-    border-radius: 20px; /* Correspond au "Image Radius" Figma */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-}
-
-/* --- LE CONTENU TEXTUEL --- */
-.engagement-content {
-    flex: 1;
-    max-width: 600px;
-}
-
-.sub-heading {
-    font-family: "Aptos", sans-serif;
-    font-weight: 700;
-    font-size: 36px;
-    line-height: 1.2;
-    color: #1A1A1A;
-    margin-bottom: 24px;
-}
-
-.engagement-content p {
-    font-family: "Aptos", sans-serif;
-    font-size: 18px;
-    line-height: 1.6;
-    color: #4A4A4A;
-    text-align: justify;
-}
-
-/* --- ADAPTATION MOBILE --- */
-@media (max-width: 1024px) {
-    .engagement-grid {
-        flex-direction: column; /* Empile sur tablette/mobile */
-        text-align: center;
-    }
-    
-    .engagement-image, .engagement-image img {
-        width: 100%;
-        height: auto;
-        flex: none;
-    }
-}
-</style>
     <section class="engagement-section section-padding">
         <div class="container engagement-grid">
             <div class="engagement-image">
@@ -222,88 +422,7 @@ font-weight: 700;
 
 
 
-        <style>
-            .values-section {
-    position: relative;
-    padding: 80px 0;
-    min-height: 600px;
-}
 
-/* Positionnement des piliers comme sur ta photo */
-.pillar-left, .pillar-right {
-    position: absolute;
-    top: 100px; /* Aligné avec le début de la section */
-    width: 80px; /* Ajuste selon la taille de tes images */
-    z-index: 1;
-}
-/* Positionnement et taille des piliers */
-.pillar-left, .pillar-right {
-    position: absolute;
-    top: 50px; /* Aligné un peu plus haut */
-    width: 500px; /* Augmenté de 80px à 120px pour plus de présence */
-    z-index: 1;
-    /* Optionnel : si tu veux qu'ils soient très grands, tu peux monter à 150px */
-}
-
-.pillar-left { 
-    left: 10px; /* Rapproché du bord de l'écran */
-}
-
-.pillar-right { 
-    right: 10px; /* Rapproché du bord de l'écran */
-}
-
-/* On ajuste la marge du contenu pour ne pas que le texte touche les images agrandies */
-.container-values {
-    max-width: 850px;
-    margin: 0 auto;
-    padding: 0 140px; /* Augmenté pour laisser de la place aux grands piliers */
-    z-index: 2;
-    position: relative;
-}
-
-.container-values {
-    max-width: 850px;
-    margin: 0 auto;
-    padding: 0 40px;
-    z-index: 2;
-    position: relative;
-}
-
-.values-main-title {
-    font-family: 'Aptos', sans-serif;
-    font-size: 38px;
-    font-weight: 700;
-    color: #1A1A1A;
-    margin-bottom: 30px;
-}
-
-.values-intro {
-    font-family: 'Aptos', sans-serif;
-    font-size: 18px;
-    color: #4A4A4A;
-    margin-bottom: 50px;
-}
-
-/* Le style bleu ciel et gras que tu as demandé */
-.value-title-blue {
-    font-family: 'Aptos', sans-serif;
-    color: #00A3DA; /* Bleu ciel Iokeo */
-    font-weight: 700;
-    font-size: 20px;
-    margin-top: 40px;
-    margin-bottom: 15px;
-    line-height: 1.4;
-}
-
-.value-text {
-    font-family: 'Aptos', sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-    color: #555;
-    text-align: left; /* Aligné à gauche comme sur l'image */
-}
-        </style>
     </section>
 
     <section class="values-section">
@@ -337,65 +456,7 @@ font-weight: 700;
     </div>
 </section>
 
-<style>
-    .vision-section {
-    padding: 100px 0;
-    background-color: #fff;
-}
 
-.vision-grid {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 80px;
-}
-
-.vision-content {
-    flex: 1;
-}
-
-/* On réutilise le style du titre précédent */
-.vision-content .sub-heading {
-    font-family: "Aptos", sans-serif;
-    font-weight: 700;
-    font-size: 42px;
-    margin-bottom: 30px;
-    color: #1A1A1A;
-}
-
-.vision-content p {
-    font-family: "Aptos", sans-serif;
-    font-size: 18px;
-    line-height: 1.6;
-    color: #4A4A4A;
-    text-align: justify;
-}
-
-/* L'image de droite (mêmes dimensions que l'autre section pour l'harmonie) */
-.vision-image {
-    flex: 0 0 650px; /* Un peu plus petit que l'autre pour laisser respirer le texte */
-}
-
-.vision-image img {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    border-radius: 20px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-}
-
-/* Mobile */
-@media (max-width: 1024px) {
-    .vision-grid {
-        flex-direction: column-reverse; /* Texte au dessus de l'image sur tel */
-        gap: 40px;
-    }
-    .vision-image {
-        flex: none;
-        width: 100%;
-    }
-}
-</style>
 <section class="vision-section">
     <div class="container vision-grid">
         <div class="vision-content">
@@ -411,92 +472,7 @@ font-weight: 700;
 
 
 
-<style>.intervention-section {
-    padding: 100px 0;
-    background-color: #fff;
-}
 
-.intervention-grid {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 50px;
-}
-
-.intervention-left { flex: 1; }
-.intervention-right { flex: 1; text-align: right; }
-
-.intervention-title {
-    font-size: 36px;
-    font-weight: 700;
-    margin-bottom: 25px;
-}
-
-.intervention-intro {
-    font-size: 16px;
-    color: #555;
-    margin-bottom: 50px;
-    line-height: 1.5;
-}
-
-/* --- La Timeline --- */
-.steps-container {
-    position: relative;
-    padding-left: 20px;
-}
-
-/* La ligne verticale grise */
-.steps-container::before {
-    content: '';
-    position: absolute;
-    left: 45px; /* Aligné au centre des cercles */
-    top: 0;
-    bottom: 0;
-    width: 1px;
-    background-color: #E0E0E0;
-    z-index: 1;
-}
-
-.step-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 40px;
-    position: relative;
-    z-index: 2;
-}
-
-.step-number {
-    width: 50px;
-    height: 50px;
-    background-color: #F5F5F5; /* Gris très clair */
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    color: #333;
-    margin-right: 30px;
-    flex-shrink: 0;
-}
-
-.step-text h3 {
-    font-size: 20px;
-    font-weight: 700;
-    margin: 0 0 5px 0;
-    color: #1A1A1A;
-}
-
-.step-text p {
-    font-size: 16px;
-    color: #666;
-    margin: 0;
-}
-
-/* --- La Pyramide --- */
-.pyramid-img {
-    max-width: 100%;
-    height: auto;
-}</style>
 
 <section class="intervention-section">
     <div class="container intervention-grid">
@@ -538,3 +514,42 @@ font-weight: 700;
 
     </div>
 </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="container footer-wrapper">
+        <div class="footer-brand">
+            <img src="img7.svg" alt="iokeo business transformation">
+            <p class="footer-desc">Chez IOKEO, nous accompagnons les entreprises et institutions à chaque étape de leur transformation à travers des stratégies claires, des processus efficaces et des systèmes.</p>
+            <div class="social-links">
+                <a href="#"><img src="img.svg" alt="LinkedIn"></a>
+            </div>
+        </div>
+        <div class="footer-nav">
+            <h4>PAGES</h4>
+            <ul>
+                <li><a href="#">Acceuil</a></li>
+                <li><a href="#">A propos</a></li>
+                <li><a href="#">Services</a></li>
+            </ul>
+        </div>
+        <div class="footer-contact">
+            <h4>CONTACT</h4>
+            <p>18, rue 9006 Houénoussou Sainte-Rita</p>
+            <p><a href="mailto:contact@iokeo.com">contact@iokeo.com</a></p>
+            <p><a href="tel:+2290162419710">(+229) 01 62 41 97 10</a></p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <p>
+                <span>© 2025 iokeo</span>
+                <span class="separator">•</span>
+                <a href="#">Privacy Policy</a>
+                <span class="separator">•</span>
+                <a href="#">Terms & Conditions</a>
+            </p>
+        </div>
+    </div>
+</footer>
