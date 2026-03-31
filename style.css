@@ -105,11 +105,11 @@ h1, h2, .about-title {
 }
 
 .btn-message {
-    background-color: #0093B6;
+    background-color: #0093B6 ;
     background-blend-mode: color;
     box-shadow: 0 2px 15px 0 rgba(0, 147, 182, 0.20), 0 6px 27px 0 rgba(0, 147, 182, 0.15), 0 1px 0 0 rgba(255, 255, 255, 0.20) inset, 0 1px 4px 0 rgba(255, 255, 255, 0.25) inset;
     border-radius: 999px;
-    color: white;
+    color:white;
     padding: 12px 25px;
     text-decoration: none;
     font-weight: 600;
@@ -141,7 +141,7 @@ h1, h2, .about-title {
 }
 
 .mobile-cta {
-    display: none;
+    display: inline-block;
 }
 
 /* ========================================
@@ -426,7 +426,7 @@ h1, h2, .about-title {
     color: #FFFFFF;
     text-decoration: none;
     width: 100%;
-    padding: 6px 0;
+    padding: 4px 0;
     border-radius: 46px;
     font-weight: 800;
     font-size: 19px;
