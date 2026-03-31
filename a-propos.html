@@ -6,13 +6,15 @@
     <title>Iokeo - Transformation Business</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* --- SECTION HERO --- */
+        /* ========================================
+           HERO SECTION
+           ======================================== */
         .hero-image-container {
             position: relative;
             width: 100%;
-            height: 700px; /* Hauteur de la frame Figma */
+            height: 700px;
             display: flex;
-            align-items: flex-end; /* Centre verticalement le bloc */
+            align-items: flex-end;
             overflow: hidden;
         }
 
@@ -22,91 +24,79 @@
             left: 0;
             width: 100%;
             height: 100%;
-            /*  object-fit: cover; */
             z-index: 1;
         }
 
         .hero-text-overlay {
-            position: absolute; /* Sort du flux pour se placer librement */
+            position: absolute;
             z-index: 10;
-
-            /* Coordonnées pour le caler en bas à gauche */
-            bottom: 80px;  /* Distance depuis le bas de l'image */
-            left: 80px;    /* Distance depuis le bord gauche de l'écran */
-
-            width: auto;   /* Laisse la glass-box définir la largeur */
+            bottom: 80px;
+            left: 80px;
+            width: auto;
         }
 
         .glass-box {
             width: 700px;
             height: 300px;
-
-            /* Effet Glassmorphism Figma */
             background: linear-gradient(0deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4));
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
-
             padding: 1px;
             border-radius: 10px;
             border: 1px solid rgba(255, 255, 255, 0.3);
             box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
             display: flex;
-            flex-direction: column;   /* Aligne titre et texte l'un sous l'autre */
-            justify-content: center;  /* Centre verticalement */
-            align-items: center;      /* Centre horizontalement */
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
         }
 
-        /* --- TYPOGRAPHIE --- */
+        /* TYPOGRAPHY */
         .main-heading {
             font-size: 40px;
             font-weight: 700;
             color: #1A1A1A;
-
             width: 100%;
             display: block;
-
             text-align: left;
             padding-left: 135px;
             margin-bottom: 24px;
-
             font-family: "Aptos";
-            font-weight: 700;
         }
 
         .about-description {
             font-family: "Aptos", sans-serif;
             font-size: 15px;
-            line-height: 1.3; /* Correspond au 130% */
+            line-height: 1.3;
             color: rgba(35, 35, 35, 1);
-
             text-align: justify;
             max-width: 645px;
         }
 
-        /* --- SECTION ENGAGEMENT --- */
+        /* ========================================
+           ENGAGEMENT SECTION
+           ======================================== */
         .engagement-grid {
             display: flex;
-            align-items: center; /* Centre verticalement l'image et le texte */
+            align-items: center;
             justify-content: space-between;
-            gap: 60px; /* Espace entre l'image et le texte */
+            gap: 60px;
             padding: 80px 0;
         }
 
-        /* --- L'IMAGE (Specs Figma) --- */
         .engagement-image {
-            flex: 0 0 771px; /* Force la largeur exacte de 771px */
+            flex: 0 0 771px;
         }
 
         .engagement-image img {
             width: 771px;
-            height: 411px; /* Hauteur exacte Figma */
+            height: 411px;
             object-fit: cover;
-            border-radius: 20px; /* Correspond au "Image Radius" Figma */
+            border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
         }
 
-        /* --- LE CONTENU TEXTUEL --- */
         .engagement-content {
             flex: 1;
             max-width: 600px;
@@ -129,10 +119,9 @@
             text-align: justify;
         }
 
-        /* --- ADAPTATION MOBILE --- */
         @media (max-width: 1024px) {
             .engagement-grid {
-                flex-direction: column; /* Empile sur tablette/mobile */
+                flex-direction: column;
                 text-align: center;
             }
 
@@ -143,34 +132,34 @@
             }
         }
 
-        /* --- SECTION VALEURS --- */
+        /* ========================================
+           VALUES SECTION
+           ======================================== */
         .values-section {
             position: relative;
             padding: 80px 0;
             min-height: 600px;
         }
 
-        /* Positionnement des piliers comme sur ta photo */
         .pillar-left, .pillar-right {
             position: absolute;
-            top: 50px; /* Aligné un peu plus haut */
-            width: 500px; /* Augmenté pour plus de présence */
+            top: 50px;
+            width: 500px;
             z-index: 1;
         }
 
         .pillar-left {
-            left: 10px; /* Rapproché du bord de l'écran */
+            left: 10px;
         }
 
         .pillar-right {
-            right: 10px; /* Rapproché du bord de l'écran */
+            right: 10px;
         }
 
-        /* On ajuste la marge du contenu pour ne pas que le texte touche les images agrandies */
         .container-values {
             max-width: 850px;
             margin: 0 auto;
-            padding: 0 140px; /* Augmenté pour laisser de la place aux grands piliers */
+            padding: 0 140px;
             z-index: 2;
             position: relative;
         }
@@ -190,10 +179,9 @@
             margin-bottom: 50px;
         }
 
-        /* Le style bleu ciel et gras que tu as demandé */
         .value-title-blue {
             font-family: 'Aptos', sans-serif;
-            color: #00A3DA; /* Bleu ciel Iokeo */
+            color: #00A3DA;
             font-weight: 700;
             font-size: 20px;
             margin-top: 40px;
@@ -206,10 +194,12 @@
             font-size: 16px;
             line-height: 1.6;
             color: #555;
-            text-align: left; /* Aligné à gauche comme sur l'image */
+            text-align: left;
         }
 
-        /* --- SECTION VISION --- */
+        /* ========================================
+           VISION SECTION
+           ======================================== */
         .vision-section {
             padding: 100px 0;
             background-color: #fff;
@@ -226,7 +216,6 @@
             flex: 1;
         }
 
-        /* On réutilise le style du titre précédent */
         .vision-content .sub-heading {
             font-family: "Aptos", sans-serif;
             font-weight: 700;
@@ -243,9 +232,8 @@
             text-align: justify;
         }
 
-        /* L'image de droite (mêmes dimensions que l'autre section pour l'harmonie) */
         .vision-image {
-            flex: 0 0 650px; /* Un peu plus petit que l'autre pour laisser respirer le texte */
+            flex: 0 0 650px;
         }
 
         .vision-image img {
@@ -256,10 +244,9 @@
             box-shadow: 0 15px 40px rgba(0,0,0,0.1);
         }
 
-        /* Mobile */
         @media (max-width: 1024px) {
             .vision-grid {
-                flex-direction: column-reverse; /* Texte au dessus de l'image sur tel */
+                flex-direction: column-reverse;
                 gap: 40px;
             }
             .vision-image {
@@ -268,7 +255,9 @@
             }
         }
 
-        /* --- SECTION INTERVENTION --- */
+        /* ========================================
+           INTERVENTION SECTION
+           ======================================== */
         .intervention-section {
             padding: 100px 0;
             background-color: #fff;
@@ -297,17 +286,15 @@
             line-height: 1.5;
         }
 
-        /* --- La Timeline --- */
         .steps-container {
             position: relative;
             padding-left: 20px;
         }
 
-        /* La ligne verticale grise */
         .steps-container::before {
             content: '';
             position: absolute;
-            left: 45px; /* Aligné au centre des cercles */
+            left: 45px;
             top: 0;
             bottom: 0;
             width: 1px;
@@ -326,7 +313,7 @@
         .step-number {
             width: 50px;
             height: 50px;
-            background-color: #F5F5F5; /* Gris très clair */
+            background-color: #F5F5F5;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -350,7 +337,6 @@
             margin: 0;
         }
 
-        /* --- La Pyramide --- */
         .pyramid-img {
             max-width: 100%;
             height: auto;
@@ -359,11 +345,11 @@
 </head>
 <body>
 
-
-
+<!-- ========================================
+     HEADER - NAVIGATION
+     ======================================== -->
 <header class="navbar">
     <div class="container nav-wrapper">
-        
         <a href="/" class="logo">
             <img src="logo.svg" alt="iokeo business transformation">
         </a>
@@ -375,61 +361,61 @@
         </div>
 
         <nav class="nav-links" id="nav-links">
-            <ul> 
+            <ul>
                 <li><a href="index.html" class="nav-item">Accueil</a></li>
                 <li><a href="a-propos.html" class="nav-item active">A propos</a></li>
                 <li><a href="services.html" class="nav-item">Services</a></li>
-                <li><a href="#" class="nav-item">Contacts</a></li>
+                <li><a href="contacts.html" class="nav-item">Contacts</a></li>
             </ul>
         </nav>
         <div class="btn-general">
-<div class="mobile-cta">
-            <a href="#" class="btn-message">Envoyez un message</a>
-        </div>
-        </div>
-    </div>
-</header>
-    <main>
-<section class="about-hero-page">
-    <div class="hero-image-container">
-        <img src="image/img7.png" alt="Transformation Iokeo" class="hero-bg-img">
-        
-        <div class="hero-text-overlay">
-            <div class="glass-box">
-                <h3 class="main-heading">Qui sommes nous ?</h3>
-                <p class="about-description">
-                    Nous sommes une entreprise de services numériques béninoise engagée sur les enjeux fondamentaux de la transformation numérique des organisations publiques et privées d'Afrique subsaharienne francophone : la maîtrise du Système d'Information, la maîtrise des Projets, la digitalisation des processus et la productivité, le management de la performance économique et opérationnelle.
-                </p>
+            <div class="mobile-cta">
+                <a href="#" class="btn-message">Envoyez un message</a>
             </div>
         </div>
     </div>
-</section>
+</header>
 
+<main>
+    <!-- ========================================
+         HERO SECTION
+         ======================================== -->
+    <section class="about-hero-page">
+        <div class="hero-image-container">
+            <img src="image/img7.png" alt="Transformation Iokeo" class="hero-bg-img">
+            <div class="hero-text-overlay">
+                <div class="glass-box">
+                    <h3 class="main-heading">Qui sommes nous ?</h3>
+                    <p class="about-description">
+                        Nous sommes une entreprise de services numériques béninoise engagée sur les enjeux fondamentaux de la transformation numérique des organisations publiques et privées d'Afrique subsaharienne francophone : la maîtrise du Système d'Information, la maîtrise des Projets, la digitalisation des processus et la productivité, le management de la performance économique et opérationnelle.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-
+    <!-- ========================================
+         ENGAGEMENT SECTION
+         ======================================== -->
     <section class="engagement-section section-padding">
         <div class="container engagement-grid">
             <div class="engagement-image">
-                 <img src="image/img8.jpg" alt="Notre engagement">
+                <img src="image/img8.jpg" alt="Notre engagement">
             </div>
             <div class="engagement-content">
                 <h3 class="sub-heading">Notre parcours et notre engagement</h3>
                 <p>Établie en 2018, IOKEO a assuré des engagements auprès de clients prestigieux et exigeants, du secteur public comme privé, au Bénin et dans la sous-région. Nous avons développé des expertises internes, autant technologiques que méthodologiques, ainsi qu'un réseau de partenaires technologiques avec l'ambition assumée de proposer une expertise au niveau des meilleurs à l'international, une qualité et une fiabilité sans concession sur les perspectives, livrables et solutions que nous délivrons pour nos clients.</p>
             </div>
         </div>
-
-
-
-
-
-
     </section>
 
+    <!-- ========================================
+         VALUES SECTION
+         ======================================== -->
     <section class="values-section">
-    <img src="image/img9.png" alt="" class="pillar-left">
-    <img src="image/img10.png" alt="" class="pillar-right">
-
-    <div class="container-values">
+        <img src="image/img9.png" alt="" class="pillar-left">
+        <img src="image/img10.png" alt="" class="pillar-right">
+        <div class="container-values">
         <h2 class="values-main-title">Nos Valeurs</h2>
         <p class="values-intro">Les principes suivant guident IOKEO dans son action et fondent les bases de sa culture :</p>
 
@@ -453,30 +439,28 @@
                 <h3 class="value-title-blue">IOKEO allie de manière cohérente une démarche classique de réflexion et de formulation stratégique, à celle innovante et actuelle de l'effectuation.</h3>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-
-<section class="vision-section">
-    <div class="container vision-grid">
-        <div class="vision-content">
-            <h2 class="sub-heading">Notre vision</h2>
-            <p>La philosophie d'intervention de IOKEO auprès de ses clients est celle d'un "doer" (faiseur) engagé. Au-delà du livrables, IOKEO s'implique dans l'exploitation / opérationnalisation des livrables, partageant le vécu unique des décideurs et des organisations qu'elle accompagne, ainsi que leurs risques dans une logique résolue d'orientation vers les résultats et d'une obsession de la création de valeur pour nos clients.</p>
+    <!-- ========================================
+         VISION SECTION
+         ======================================== -->
+    <section class="vision-section">
+        <div class="container vision-grid">
+            <div class="vision-content">
+                <h2 class="sub-heading">Notre vision</h2>
+                <p>La philosophie d'intervention de IOKEO auprès de ses clients est celle d'un "doer" (faiseur) engagé. Au-delà du livrables, IOKEO s'implique dans l'exploitation / opérationnalisation des livrables, partageant le vécu unique des décideurs et des organisations qu'elle accompagne, ainsi que leurs risques dans une logique résolue d'orientation vers les résultats et d'une obsession de la création de valeur pour nos clients.</p>
+            </div>
+            <div class="vision-image">
+                <img src="image/img.jpg" alt="Notre vision Iokeo">
+            </div>
         </div>
-        <div class="vision-image">
-            <img src="image/img.jpg" alt="Notre vision Iokeo">
-        </div>
-    </div>
-</section>
-
-
-
-
-
-
-<section class="intervention-section">
-    <div class="container intervention-grid">
-        
+    </section>
+    <!-- ========================================
+         INTERVENTION SECTION
+         ======================================== -->
+    <section class="intervention-section">
+        <div class="container intervention-grid">
+            
         <div class="intervention-left">
             <h2 class="intervention-title">Mode d'intervention</h2>
             <p class="intervention-intro">IOKEO décline son expertise autour de trois métiers essentiels : la stratégie, les processus métiers et les systèmes d'information. Sur ces thématiques, nous intervenons à travers trois modalités complémentaires :</p>

@@ -5,192 +5,189 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iokeo - Transformation Business</title>
     <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <style>
+        /* ========================================
+           STYLES GLOBAUX
+        ======================================== */
 
-<!-- HEADER : NAVBAR PRINCIPALE -->
-<header class="navbar">
-    <div class="container nav-wrapper">
-        <a href="/" class="logo">
-            <img src="logo.svg" alt="iokeo business transformation">
-        </a>
+        body {
+            margin: 0;
+            font-family: 'Aptos', Segoe UI, sans-serif;
+            background-color: #FFFFFF;
+        }
 
-        <div class="burger-menu" id="burger-menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-        <nav class="nav-links">
-            <ul>
-                <li><a href="index.html" class="nav-item ">Accueil</a></li>
-                <li><a href="a-propos.html" class="nav-item">A propos</a></li>
-                <li><a href="services.html" class="nav-item active">Services</a></li>
-                <li><a href="contacts.html" class="nav-item">Contacts</a></li>
-            </ul>
-        </nav>
+        /* ========================================
+           SECTION MANAGEMENT (TABS)
+        ======================================== */
 
-        <div class="btn-general">
-            <div class="mobile-cta">
-                <a href="#" class="btn-message">Envoyez un message</a>
-            </div>
-        </div>
-    </div>
-</header>
-  <style>
-       
-    /* --- STYLE GÉNÉRAL & POLICE --- */
-    body {
-        margin: 0;
-        font-family: 'Aptos', Segoe UI, sans-serif;
-        background-color: #FFFFFF;
-    }
+        .management-section {
+            background-color: #F8FAFC;
+            padding: 80px 0;
+        }
 
-    .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-    }
-
-    /* --- SECTION MANAGEMENT (TABS) --- */
-    .management-section {
-        background-color: #F8FAFC;
-        padding: 80px 0;
-    }
-
-    .container-management {
-        display: grid;
-        grid-template-columns: 350px 1fr;
-        gap: 80px;
-        align-items: start;
-    }
-
-    /* --- BARRE DE NAVIGATION VERTICALE (CORRIGÉE) --- */
-    .management-sidebar {
-        position: relative;
-        /* La ligne grise de fond est maintenant à droite du texte */
-        border-right: 2px solid #E2E8F0; 
-        padding-right: 0;
-    }
-
-    .tabs-list {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    .tab-item {
-        position: relative;
-        padding: 15px 30px 15px 0; /* Espace pour le texte à gauche de la ligne */
-        color: #64748B;
-        font-size: 16px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: color 0.3s ease;
-        line-height: 1.3;
-        text-align: left;
-    }
-
-    /* Le point gris/bleu sur la ligne de droite */
-    .tab-item::after {
-        content: '';
-        position: absolute;
-        right: -9px; /* Centré exactement sur la bordure de droite */
-        top: 50%;
-        transform: translateY(-50%);
-        width: 16px;
-        height: 16px;
-        background-color: #CBD5E1;
-        border: 3px solid #F8FAFC;
-        border-radius: 50%;
-        z-index: 2;
-        transition: all 0.3s ease;
-    }
-
-    /* État Actif */
-    .tab-item.active {
-        color: #00A3DA;
-    }
-
-    .tab-item.active::after {
-        background-color: #00A3DA;
-        box-shadow: 0 0 0 3px rgba(0, 163, 218, 0.2);
-        transform: translateY(-50%) scale(1.2);
-    }
-
-    /* La barre bleue d'activation qui glisse (Indicateur) */
-    .active-indicator {
-        position: absolute;
-        right: -2px; /* Colle à la bordure de droite */
-        width: 3px;
-        background-color: #00A3DA;
-        z-index: 3;
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    /* --- CONTENU À DROITE & ANIMATION --- */
-    .tab-pane {
-        display: none;
-        opacity: 0;
-        /* Animation de bas en haut uniquement */
-        transform: translateY(15px); 
-        transition: all 0.5s ease;
-    }
-
-    .tab-pane.active {
-        display: block;
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    .content-title {
-        font-size: 42px;
-        font-weight: 800;
-        color: #1E293B;
-        margin-bottom: 35px;
-    }
-
-    /* Style identique pour les listes */
-    .details-check-list {
-        list-style: none;
-        padding: 0;
-    }
-
-    .details-check-list li {
-        position: relative;
-        padding-left: 35px;
-        margin-bottom: 20px;
-        font-size: 16px;
-        line-height: 1.7;
-        color: #475569;
-    }
-
-    .details-check-list li::before {
-        content: '✓';
-        position: absolute;
-        left: 0;
-        color: #00A3DA;
-        font-weight: 900;
-        font-size: 20px;
-    }
-
-    strong { color: #1E293B; }
-
-    /* Responsive */
-    @media (max-width: 992px) {
         .container-management {
-            grid-template-columns: 1fr;
-            gap: 40px;
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 80px;
+            align-items: start;
         }
+
+        /* Barre de navigation verticale */
         .management-sidebar {
-            border-right: none;
-            border-bottom: 2px solid #E2E8F0;
+            position: relative;
+            border-right: 2px solid #E2E8F0;
+            padding-right: 0;
         }
-        .tab-item::after, .active-indicator { display: none; }
-    }
 
+        .tabs-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
 
-        /* --- BANNIÈRE SERVICES --- */
+        .tab-item {
+            position: relative;
+            padding: 15px 30px 15px 0;
+            color: #64748B;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            line-height: 1.3;
+            text-align: left;
+        }
+
+        .tab-item::after {
+            content: '';
+            position: absolute;
+            right: -9px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 16px;
+            height: 16px;
+            background-color: #CBD5E1;
+            border: 3px solid #F8FAFC;
+            border-radius: 50%;
+            z-index: 2;
+            transition: all 0.3s ease;
+        }
+
+        .tab-item.active {
+            color: #00A3DA;
+        }
+
+        .tab-item.active::after {
+            background-color: #00A3DA;
+            box-shadow: 0 0 0 3px rgba(0, 163, 218, 0.2);
+            transform: translateY(-50%) scale(1.2);
+        }
+
+        .active-indicator {
+            position: absolute;
+            right: -2px;
+            width: 3px;
+            background-color: #00A3DA;
+            z-index: 3;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Contenu à droite & animation */
+        .tab-pane {
+            display: none;
+            opacity: 0;
+            transform: translateY(15px);
+            transition: all 0.5s ease;
+        }
+
+        .tab-pane.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .content-title {
+            font-size: 42px;
+            font-weight: 800;
+            color: #1E293B;
+            margin-bottom: 35px;
+        }
+
+        .details-check-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .details-check-list li {
+            position: relative;
+            padding-left: 35px;
+            margin-bottom: 20px;
+            font-size: 16px;
+            line-height: 1.7;
+            color: #475569;
+        }
+
+        .details-check-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #00A3DA;
+            font-weight: 900;
+            font-size: 20px;
+        }
+
+        strong {
+            color: #1E293B;
+        }
+
+        .numbered-blue-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .numbered-blue-list li {
+            position: relative;
+            padding-left: 35px;
+            margin-bottom: 20px;
+            font-size: 16px;
+            line-height: 1.7;
+            color: #475569;
+        }
+
+        .numbered-blue-list li::before {
+            content: counter(list-item) '.';
+            counter-increment: list-item;
+            position: absolute;
+            left: 0;
+            color: #00A3DA;
+            font-weight: 900;
+            font-size: 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .container-management {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .management-sidebar {
+                border-right: none;
+                border-bottom: 2px solid #E2E8F0;
+            }
+            .tab-item::after, .active-indicator {
+                display: none;
+            }
+        }
+
+        /* ========================================
+           BANNIÈRE SERVICES
+        ======================================== */
+
         .services-banner {
             background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('image/img11.png');
             background-size: cover;
@@ -207,17 +204,53 @@
             font-weight: 800;
             margin: 0;
         }
-
-        
     </style>
 </head>
 <body>
 
+<!-- ========================================
+     HEADER - NAVIGATION
+     ======================================== -->
+<header class="navbar">
+    <div class="container nav-wrapper">
+        <a href="/" class="logo">
+            <img src="logo.svg" alt="iokeo business transformation">
+        </a>
+
+        <div class="burger-menu" id="burger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <nav class="nav-links">
+            <ul>
+                <li><a href="index.html" class="nav-item">Accueil</a></li>
+                <li><a href="a-propos.html" class="nav-item">A propos</a></li>
+                <li><a href="services.html" class="nav-item active">Services</a></li>
+                <li><a href="contacts.html" class="nav-item">Contacts</a></li>
+            </ul>
+        </nav>
+
+        <div class="btn-general">
+            <div class="mobile-cta">
+                <a href="#" class="btn-message">Envoyez un message</a>
+            </div>
+        </div>
+    </div>
+</header>
+
 <main>
+    <!-- ========================================
+         SERVICES BANNER
+         ======================================== -->
     <section class="services-banner">
         <h1>Nos services</h1>
     </section>
 
+    <!-- ========================================
+         MANAGEMENT SECTION - SERVICES DETAILS WITH TABS
+         ======================================== -->
     <section class="management-section">
         <div class="container container-management">
 
@@ -423,7 +456,10 @@
     </section>
 </main>
 
-<script>
+    <!-- ========================================
+         SCRIPTS - TAB MANAGEMENT
+         ======================================== -->
+    <script>
     // SCRIPT DE GESTION DES ONGLETS
     document.addEventListener('DOMContentLoaded', () => {
         const tabItems = document.querySelectorAll('.tab-item');
@@ -452,12 +488,9 @@
     });
 </script>
 
-
-
-
-
-
-<!-- FOOTER -->
+<!-- ========================================
+     FOOTER
+     ======================================== -->
 <footer class="site-footer">
     <div class="container footer-wrapper">
         <div class="footer-brand">
