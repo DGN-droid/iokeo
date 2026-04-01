@@ -86,13 +86,26 @@ h1, h2, .about-title {
     font-size: 40px;
     width: 100%;
     display: block;
-    text-align: left;
+    margin-right: 395px;
     padding-left: 135px;
+    
+
 }
 
 .sub-heading {
     font-size: 36px;
+    width: 690px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    padding: 50px;
+    box-sizing: border-box;
+    margin-right: 40px;
+    margin-top: 100px;
+    --distance-from-image: -50px;
+    margin-left: var(--distance-from-image);
 }
+
 
 .values-main-title,
 .intervention-title {
@@ -123,10 +136,11 @@ h1, h2, .about-title {
 }
 
 .about-description {
-    max-width: 645px;
+    font-size: 19px;
     line-height: 1.3;
-    color: rgba(35, 35, 35, 1);
-    font-size: 15px;
+    color: black;
+    margin-left: 40px;
+    margin-right: 40px;
 }
 
 .text-intro {
@@ -193,14 +207,33 @@ h1, h2, .about-title {
 }
 
 .engagement-image img {
-    width: 771px;
-    height: 411px;
+    width: 70%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.10);
+    display: block;
+    margin-bottom: 30px;
+    margin-top: 100px;
 }
 
 .vision-image img {
     width: 100%;
     height: 400px;
     box-shadow: 0 15px 40px var(--shadow-medium);
+    margin-top: -150px;
+    border-radius: 16px;
+    margin-right: 90px;
+    margin-left: var(--vision-image-offset, 0); /* décale l'image à gauche ou à droite */
+}
+
+/* Classes optionnelles pour ajuster rapidement le positionnement */
+.vision-grid.shift-left .vision-image img {
+    --vision-image-offset: -100px;
+}
+
+.vision-grid.shift-right .vision-image img {
+    --vision-image-offset: 1000px;
 }
 
 /* Glass effect */
@@ -220,34 +253,104 @@ h1, h2, .about-title {
 }
 
 /* Tabs Navigation */
+
+/* Tabs Navigation */
+:root {
+    --sidebar-line: border: 3.35px solid rgba(0, 0, 0, 1)/*rgba(0, 163, 218, 0.30)*/;
+    --sidebar-dot: rgba(196, 223, 237, 1);
+    --sidebar-dot-active: rgba(0, 147, 182, 1);
+
+    --sidebar-dot-size: 20px;
+    --sidebar-dot-border: 2px;
+    --sidebar-dot-spacing: 12px;
+
+    --steps-circle: rgba(230, 244, 248, 1);
+    --steps-circle-text: #1a1a1a;
+    --steps-line: rgba(0, 147, 182, 0.5);
+
+
+  --sidebar-line-top: 500px;
+    --sidebar-line-bottom: 500px;
+    --sidebar-line-left: 20px;
+    --sidebar-dot-right: -9px;
+    --tab-vertical-spacing: 50px;
+  --font-family: 'Aptos', sans-serif;
+}
+
 .management-sidebar {
     position: relative;
     border-right: 2px solid #E2E8F0;
     padding-right: 0;
+    font-family: var(--font-family);
+}
+
+.vertical-nav-line {
+    position: absolute;
+    left: var(--sidebar-line-left);
+    top: var(--sidebar-line-top);
+    bottom: var(--sidebar-line-bottom);
+    width: 2px;
+    background: var(--sidebar-line);
+    border-radius: 999px;
+    z-index: 1;
+    overflow: hidden;
+  
+}
+
+.vertical-nav-line::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: var(--active-line-height, 0px);
+    background: var(--primary-color);
+    transition: height 0.3s ease;
 }
 
 .tabs-list {
     list-style: none;
     padding: 0;
     margin: 0;
+    
+   /* width: 124.97483825683629;
+height: 0px;
+left: 281.38px;
+angle: -90 deg;
+opacity: 1;
+border-width: 3.35px;*/
+
 }
 
-.tab-item {
+.tab-item { 
     position: relative;
-    padding: 15px 30px 15px 0;
+    padding: var(--tab-vertical-spacing) 30px var(--tab-vertical-spacing) 0;
     color: #64748B;
+    font-family: var(--font-family);
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.2s ease;
     line-height: 1.3;
     text-align: left;
+    display: flex;
+    align-items: center;
+    gap: var(--sidebar-dot-spacing);
+    z-index: 2;
 }
 
+
+
+.tab-item.active {
+    color: var(--primary-color);
+}
+
+
+/*rond de navigation vertical*/
 .tab-item::after {
     content: '';
     position: absolute;
-    right: -9px;
+    right: var(--sidebar-dot-right);
     top: 50%;
     transform: translateY(-50%);
     width: 16px;
@@ -258,24 +361,10 @@ h1, h2, .about-title {
     z-index: 2;
     transition: all 0.3s ease;
 }
-
-.tab-item.active {
-    color: var(--primary-color);
-}
-
-.tab-item.active::after {
+.tab-item.active::after {  
     background-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(0, 163, 218, 0.2);
-    transform: translateY(-50%) scale(1.2);
-}
-
-.active-indicator {
-    position: absolute;
-    right: -2px;
-    width: 3px;
-    background-color: var(--primary-color);
-    z-index: 3;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    /*box-shadow: 0 0 0 3px rgba(0, 163, 218, 0.2);*/
+    transform: translateY(-50%) scale(1.2); 
 }
 
 /* Tab Content Animation */
@@ -331,15 +420,27 @@ h1, h2, .about-title {
 
 /* Banner */
 .services-banner {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('image/img11.png');
+    /* je veux que l'image prenne tout la largeur de la page */
+    width: 100vw;
+    max-width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    background-color: #9cd7ec;
+    background-image: url('image/img11.png');
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     height: 400px;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
-}
+}*/
+
 
 .services-banner h1 {
     font-size: 64px;
@@ -359,32 +460,35 @@ h1, h2, .about-title {
     left: 45px;
     top: 0;
     bottom: 0;
-    width: 1px;
-    background-color: #E0E0E0;
+    width: 2px;
     z-index: 1;
+    background-color: var(--steps-line);
+    border-radius: 999px;
 }
 
 .step-item {
     display: flex;
     align-items: center;
-    margin-bottom: 40px;
+    margin-bottom: 60px; /* Augmenté de 40px à 60px pour plus d'espacement */
     position: relative;
     z-index: 2;
+    
 }
 
 .step-number {
     width: 50px;
     height: 50px;
-    background-color: #F5F5F5;
+    background-color: var(--steps-circle);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 700;
-    color: #333;
+    color: var(--steps-circle-text);
     margin-right: 30px;
     flex-shrink: 0;
 }
+
 
 .step-text h3 {
     font-size: 20px;
@@ -681,12 +785,26 @@ h1, h2, .about-title {
 
 /* Engagement Section */
 .engagement-image {
-    flex: 0 0 771px;
+    flex: 771px;
+    order: 1;
+    margin-top: 10px;
+
 }
 
 .engagement-content {
     flex: 1;
     max-width: 600px;
+    --distance-from-image: -250px;
+    margin-left: var(--distance-from-image);
+    order: 2;
+}
+
+
+
+.engagement-grid.reversed .engagement-content {
+    order: 1;
+    margin-left: 0;
+    margin-right: var(--distance-from-image);
 }
 
 /* Values Section */
@@ -737,9 +855,45 @@ h1, h2, .about-title {
     flex: 1;
 }
 
+.vision-content p {
+    font-size: var(--vision-text-size, 16px);
+    margin-left: var(--vision-text-offset, 0);
+    margin-right: var(--vision-text-offset, 0);
+    transition: all 0.3s ease;
+}
+
+
+.vision-content.text-left p {
+    --vision-text-offset: -80px;
+    text-align: left;
+}
+
+.vision-content.text-right p {
+    --vision-text-offset: 50px;
+    text-align: right;
+}
+
+.vision-content.text-center p {
+    --vision-text-offset: 0;
+    text-align: center;
+}
+
+.vision-content.text-large p {
+    --vision-text-size: 18px;
+}
+
+.vision-content.text-small p {
+    --vision-text-size: 14px;
+}
+
+.vision-content.text-xl p {
+    --vision-text-size: 20px;
+}
+
 .vision-content .sub-heading {
     font-size: 42px;
     margin-bottom: 30px;
+    margin-top: -150px;
 }
 
 .vision-image {
@@ -754,11 +908,30 @@ h1, h2, .about-title {
 
 .intervention-left {
     flex: 1;
+    margin-top: var(--intervention-offset, 0);
+    transition: margin-top 0.3s ease;
+    --intervention-offset: -150px;
+}
+
+/* Classes optionnelles pour déplacer la section intervention */
+.intervention-left.move-up {
+    --intervention-offset: -50px;
+}
+
+.intervention-left.move-up-more {
+    --intervention-offset: -100px;
+}
+
+.intervention-left.move-down {
+    --intervention-offset: 50px;
 }
 
 .intervention-right {
     flex: 1;
     text-align: right;
+    margin-top: -50px;
+    background: linear-gradient(50.71deg, rgba(255, 255, 255, 0) 74.24%, #FFFFFF 81.79%);
+;
 }
 
 .pyramid-img {
@@ -821,20 +994,25 @@ h1, h2, .about-title {
 }
 
 .about-image {
-    flex: 2;
-    width: 705px;
-    height: 311px;
+    flex: 1;
+    --about-img-width: 300px;
+    --about-img-height: 300px;
+    width: var(--about-img-width);
+    height: var(--about-img-height);
     display: flex;
     justify-content: flex-end;
     margin-left: 75px;
 }
 
 .about-image img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     object-position: center;
     border-radius: 16px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
+
 
 /* ========================================
    SECTION SERVICES
@@ -1001,6 +1179,7 @@ h1, h2, .about-title {
     height: auto;
     display: block;
     margin: 0;
+    margin-top: 59px;
 }
 
 .footer-desc {
@@ -1009,28 +1188,19 @@ h1, h2, .about-title {
     line-height: 130%;
     color: #ffffff;
     margin: 0;
+    
 }
 
 .social-links {
-    margin-top: 10px;
+    margin-top: -50px;
     display: flex;
     align-items: center;
 }
 
-.social-links a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 35px;
-    height: 35px;
-    border: 1px solid rgba(255, 255, 255, 1);
-    border-radius: 50%;
-    transition: all 0.3s ease;
-    text-decoration: none;
-}
+
 
 .social-links a img {
-    width: 18px;
+    width: 100%;
     height: auto;
     display: block;
 }
@@ -1039,19 +1209,30 @@ h1, h2, .about-title {
     display: flex;
     flex-direction: column;
     min-width: 200px;
+    margin-top: 100px;
+    margin-left: 0px;
+    
+}
+.footer-contact {
+    margin-left: -10px;
 }
 
+.contact{
+    margin-left: -130px;
+}
 .site-footer h4 {
     color: #46C2E1;
     font-weight: 900;
     text-transform: uppercase;
     font-size: 14px;
+    margin-left: 130px;
 }
 
 .footer-nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    margin-left: 130px;
 }
 
 .footer-nav li, .footer-contact p {
@@ -1104,6 +1285,8 @@ h1, h2, .about-title {
 .footer-bottom .separator {
     color: rgba(255, 255, 255, 0.5);
     font-weight: bold;
+    margin: 24.8px 50px;
+
 }
 
 .footer-bottom a {
