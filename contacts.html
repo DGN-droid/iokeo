@@ -8,7 +8,6 @@
 </head>
 <body>
 
-<!-- HEADER : NAVBAR PRINCIPALE -->
 <header class="navbar">
     <div class="container nav-wrapper">
         <a href="/" class="logo">
@@ -23,7 +22,7 @@
 
         <nav class="nav-links">
             <ul>
-                <li><a href="index.html" class="nav-item ">Accueil</a></li>
+                <li><a href="index.html" class="nav-item">Accueil</a></li>
                 <li><a href="a-propos.html" class="nav-item">A propos</a></li>
                 <li><a href="services.html" class="nav-item">Services</a></li>
                 <li><a href="contacts.html" class="nav-item active">Contacts</a></li>
@@ -38,61 +37,110 @@
     </div>
 </header>
 
-<style>
-    .contact-banner {
-    /* Remplace 'ton-image.jpg' par le nom de ton fichier image */
-    background-image: url('image/img12.png'); 
-    
-    background-size: cover;      /* L'image couvre toute la zone */
-    background-position: center; /* L'image est centrée */
-    background-repeat: no-repeat;
-    
-    /* Hauteur minimale pour laisser de la place au titre et aux cartes */
-    min-height: 500px; 
-    
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding-top: 80px; /* Espace pour le titre "Contactez-nous" */
-    position: relative;
-}
-
-.banner-title {
-    font-size: 48px;
-    font-weight: 800;
-    color: #000000; /* Le titre est noir sur la maquette */
-    margin-bottom: 50px;
-    z-index: 2;
-    
-}
-</style>
-<section class="contact-section">
-    <div class="contact-banner">
-        <div class="container">
+<main>
+    <section class="contact-section">
+        <div class="contact-banner">
             <h1 class="banner-title">Contactez-nous</h1>
         </div>
-    </div>
-<div class="contact-info-grid container">
-    <div class="info-card">
-        <div class="icon-box">
-            <img src="image/img13.png" alt="Téléphone"> </div>
-        
-    </div>
 
-    <div class="info-card">
-        <div class="icon-box">
-            <img src="image/img14.png" alt="Email">
-        </div>
-        <h3>Adresse Mail</h3>
-        <p><strong>contact@iokeo.com</strong></p>
-    </div>
+        <div class="contact-info-grid container">
+            <div class="info-card">
+                <div class="icon-box">
+                    <img src="image/img13.png" alt="Téléphone">
+                </div>
+                
+            </div>
 
-    <div class="info-card">
-        <div class="icon-box">
-            <img src="image/img15.png" alt="Localisation">
+            <div class="info-card">
+                <div class="icon-box">
+                    <img src="image/img14.png" alt="Email">
+                </div>
+    
+            </div>
+
+            <div class="info-card">
+                <div class="icon-box">
+                    <img src="image/img15.png" alt="Localisation">
+                </div>
+           
+            </div>
         </div>
-        <h3>Localisation</h3>
-        <p><strong>18, rue 9006 Houénoussou Sainte-Rita</strong></p>
+
+        <section class="contact-form-section">
+            <div class="container contact-form-wrapper">
+                <h2>Rédigez votre message</h2>
+                <p>N'hésitez pas à nous laisser un message pour vos préoccupations.<br>Nous répondrons dans les plus brefs délais.</p>
+                <form class="contact-form" action="#" method="post">
+                    <div class="grid-2">
+                        <label>
+                            Nom
+                            <input type="text" name="nom" placeholder="Votre nom" required>
+                        </label>
+                        <label>
+                            Prénom
+                            <input type="text" name="prenom" placeholder="Votre prénom" required>
+                        </label>
+                    </div>
+                    <div class="grid-2">
+                        <label>
+                            Adresse mail
+                            <input type="email" name="email" placeholder="contact@exemple.com" required>
+                        </label>
+                        <label>
+                            Objet
+                            <input type="text" name="objet" placeholder="Sujet" required>
+                        </label>
+                    </div>
+                    <label>
+                        Message
+                        <textarea name="message" rows="6" placeholder="Votre message" required></textarea>
+                    </label>
+                    <button type="submit" class="btn-submit">Envoyer le message</button>
+                </form>
+            </div>
+        </section>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-wrapper">
+        <div class="footer-brand">
+            <img src="img7.svg" alt="iokeo business transformation">
+            <p class="footer-desc">Chez IOKEO, nous accompagnons les entreprises et institutions à chaque étape de leur transformation à travers des stratégies claires, des processus efficaces et des systèmes.</p>
+            <div class="social-links">
+                <a href="#"><img src="img16.png" alt="LinkedIn"></a>
+            </div>
+        </div>
+        <div class="footer-nav">
+            <h4>PAGES</h4>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="a-propos.html">A propos</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contacts.html">Contacts</a></li>
+            </ul>
+        </div>
+        <div class="footer-contact">
+             <div class="contact">
+            <h4>CONTACT</h4>
+            </div>
+            <p>18, rue 9006 Houénoussou Sainte-Rita</p>
+            <p><a href="mailto:contact@iokeo.com">contact@iokeo.com</a></p>
+            <p><a href="tel:+2290162419710">(+229) 01 62 41 97 10</a></p>
+        </div>
     </div>
-</div>
+    <div class="footer-bottom">
+        <div class="container">
+            <p>
+                <span>© 2025 iokeo</span>
+                <span class="separator">•</span>
+                <a href="#">Privacy Policy</a>
+                <span class="separator">•</span>
+                <a href="#">Terms & Conditions</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
