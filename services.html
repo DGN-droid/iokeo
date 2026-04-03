@@ -45,7 +45,7 @@
          SERVICES BANNER
          ======================================== -->
     <section class="services-banner">
-        <h1>Nos services</h1>
+        
     </section>
 
     <!-- ========================================
@@ -268,6 +268,22 @@
         const tabPanes = document.querySelectorAll('.tab-pane');
         const sidebarLine = document.querySelector('.vertical-nav-line');
 
+        const setActiveTab = (targetId) => {
+            if (!targetId) return;
+
+            const targetTab = document.querySelector(`.tab-item[data-target="${targetId}"]`);
+            const targetPane = document.getElementById(targetId);
+            if (!targetTab || !targetPane) return;
+
+            tabItems.forEach(tab => tab.classList.remove('active'));
+            tabPanes.forEach(pane => pane.classList.remove('active'));
+
+            targetTab.classList.add('active');
+            targetPane.classList.add('active');
+
+            updateActiveLine();
+        };
+
         const updateActiveLine = () => {
             const active = document.querySelector('.tab-item.active');
             if (!active || !sidebarLine) return;
@@ -280,27 +296,28 @@
             sidebarLine.style.setProperty('--active-line-height', `${newHeight}px`);
         };
 
-        // Initial update
-        updateActiveLine();
+        // Ouvrir l'onglet depuis hash URL (ex: services.html#transfo-num)
+        const hashId = window.location.hash.replace('#', '');
+        if (hashId) {
+            setActiveTab(hashId);
+            // se positionner un peu plus haut quand le hash est activé
+            const scrollTarget = document.getElementById(hashId);
+            if (scrollTarget) {
+                scrollTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        } else {
+            // Initial state(default)
+            updateActiveLine();
+        }
 
         tabItems.forEach(item => {
             item.addEventListener('click', () => {
                 const targetId = item.getAttribute('data-target');
+                setActiveTab(targetId);
 
-                // 1. Désactiver tous les onglets
-                tabItems.forEach(tab => tab.classList.remove('active'));
-                // 2. Cacher tous les contenus
-                tabPanes.forEach(pane => pane.classList.remove('active'));
+                // Met à jour l'URL sans recharger la page
+                history.replaceState(null, '', `#${targetId}`);
 
-                // 3. Activer l'onglet cliqué
-                item.classList.add('active');
-                // 4. Afficher le contenu correspondant
-                document.getElementById(targetId).classList.add('active');
-
-                // Mise à jour de la ligne active
-                updateActiveLine();
-
-                // Optionnel : Scroll fluide vers le titre sur petit écran
                 if(window.innerWidth < 992) {
                     document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
                 }
@@ -308,6 +325,10 @@
         });
 
         window.addEventListener('resize', updateActiveLine);
+        window.addEventListener('hashchange', () => {
+            const newHash = window.location.hash.replace('#', '');
+            if (newHash) setActiveTab(newHash);
+        });
     });
 </script>
 
@@ -320,7 +341,7 @@
             <img src="img7.svg" alt="iokeo business transformation">
             <p class="footer-desc">Chez IOKEO, nous accompagnons les entreprises et institutions à chaque étape de leur transformation à travers des stratégies claires, des processus efficaces et des systèmes.</p>
             <div class="social-links">
-                <a href="#"><img src="img16.png" alt="LinkedIn"></a>
+                <a href="https://www.linkedin.com/company/iokeo/"><img src="img16.png" alt="LinkedIn"></a>
             </div>
         </div>
         <div class="footer-nav">
