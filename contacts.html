@@ -46,23 +46,26 @@
         <div class="contact-info-grid container">
             <div class="info-card">
                 <div class="icon-box">
-                    <img src="image/img13.png" alt="Téléphone">
+                    <img src="image/img13 (2).png" alt="Phone">
                 </div>
-                
+                <h3 class="card-title">Numéros de téléphone</h3>
+                <p class="card-text">(+229) 01 62 41 97 10</p>
             </div>
 
             <div class="info-card">
                 <div class="icon-box">
-                    <img src="image/img14.png" alt="Email">
+                    <img src="image/img14 (2).png" alt="Email">
                 </div>
-    
+                <h3 class="card-title">Adresse email</h3>
+                <p class="card-text"><a href="mailto:contact@iokeo.com">contact@iokeo.com</a></p>
             </div>
 
             <div class="info-card">
                 <div class="icon-box">
-                    <img src="image/img15.png" alt="Localisation">
+                    <img src="image/img15 (2).png" alt="Location">
                 </div>
-           
+                <h3 class="card-title">Localisation</h3>
+                <p class="card-text">18, rue 9006 Houénoussou Sainte-Rita</p>
             </div>
         </div>
 
@@ -141,6 +144,72 @@
         </div>
     </div>
 </footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const form = document.querySelector('.contact-form');
+        const fields = [
+            { selector: '[name="nom"]', hint: 'Tapez votre nom complet.', validate: value => value.trim() ? { valid: true, message: 'Nom ok.' } : { valid: false, message: 'Le nom est obligatoire.' } },
+            { selector: '[name="prenom"]', hint: 'Tapez votre prénom.', validate: value => value.trim() ? { valid: true, message: 'Prénom ok.' } : { valid: false, message: 'Le prénom est obligatoire.' } },
+            { selector: '[name="email"]', hint: 'Adresse email valide requise (ex: contact@exemple.com).', validate: value => {
+                const trimmed = value.trim();
+                if (!trimmed) return { valid: false, message: 'L’adresse email est obligatoire.' };
+                if (!/@/.test(trimmed)) return { valid: false, message: 'L’email doit contenir @.' };
+                if (!/\.[a-z]{2,}$/i.test(trimmed)) return { valid: false, message: 'L’email doit se terminer par .com, .fr, ...' };
+                return { valid: true, message: 'Email valide.' };
+            } },
+            { selector: '[name="objet"]', hint: 'Indiquez le sujet de votre message.', validate: value => value.trim() ? { valid: true, message: 'Objet ok.' } : { valid: false, message: 'Le sujet est obligatoire.' } },
+            { selector: '[name="message"]', hint: 'Écrivez au moins 20 caractères.', validate: value => {
+                const trimmed = value.trim();
+                if (!trimmed) return { valid: false, message: 'Le message est obligatoire.' };
+                if (trimmed.length < 20) return { valid: false, message: 'Le message doit contenir au moins 20 caractères.' };
+                return { valid: true, message: 'Message ok.' };
+            } }
+        ];
+
+        const fieldData = fields.map(field => {
+            const input = form.querySelector(field.selector);
+            if (!input) return null;
+            const hint = document.createElement('span');
+            hint.className = 'field-hint';
+            hint.textContent = field.hint;
+            input.insertAdjacentElement('afterend', hint);
+
+            let touched = false;
+
+            const update = (force = false) => {
+                if (!touched && !force && !input.value.trim()) {
+                    return false;
+                }
+                touched = true;
+                hint.classList.add('visible');
+                const result = field.validate(input.value);
+                hint.textContent = result.message;
+                hint.classList.toggle('error', !result.valid);
+                hint.classList.toggle('success', result.valid);
+                input.classList.toggle('invalid', !result.valid);
+                input.classList.toggle('valid', result.valid);
+                return result.valid;
+            };
+
+            input.addEventListener('input', () => update(false));
+            input.addEventListener('blur', () => update(false));
+            return { input, update };
+        }).filter(Boolean);
+
+        form.addEventListener('submit', event => {
+            let allValid = true;
+            fieldData.forEach(field => {
+                const isValid = field.update(true);
+                if (!isValid) allValid = false;
+            });
+
+            if (!allValid) {
+                event.preventDefault();
+            }
+        });
+    });
+</script>
 
 </body>
 </html>

@@ -84,7 +84,12 @@
 
         <div class="values-list">
             <div class="value-block">
-                <h3 class="value-title-blue">IOKEO est un doer auprès de ses clients :</h3>
+                <div class="value-title-row">
+                    <h3 class="value-title-blue">IOKEO est un doer auprès de ses clients :</h3>
+                    <button type="button" class="value-toggle" aria-expanded="false">
+                        <span class="value-arrow"></span>
+                    </button>
+                </div>
                 <p class="value-text">
                     Il s'approprie leurs contextes uniques et partage leurs risques, et vise à développer une relation durable. 
                     Cette relation étant le cadre d'accompagnement des clients dans la durée, sur leur trajectoire de transformation, 
@@ -95,11 +100,23 @@
             </div>
 
             <div class="value-block">
-                <h3 class="value-title-blue">IOKEO privilégie la qualité de l'intervention :</h3>
+                <div class="value-title-row">
+                    <h3 class="value-title-blue">IOKEO privilégie la qualité de l'intervention :</h3>
+                    <button type="button" class="value-toggle" aria-expanded="false">
+                        <span class="value-arrow"></span>
+                    </button>
+                </div>
+                <p class="value-text"></p>
             </div>
 
             <div class="value-block">
-                <h3 class="value-title-blue">IOKEO allie de manière cohérente une démarche classique de réflexion et de formulation stratégique, à celle innovante et actuelle de l'effectuation.</h3>
+                <div class="value-title-row">
+                    <h3 class="value-title-blue">IOKEO allie de manière cohérente une démarche classique de réflexion et de formulation stratégique, à celle innovante et actuelle de l'effectuation.</h3>
+                    <button type="button" class="value-toggle" aria-expanded="false">
+                        <span class="value-arrow"></span>
+                    </button>
+                </div>
+                <p class="value-text"></p>
             </div>
         </div>
     </section>
@@ -203,3 +220,27 @@
         </div>
     </div>
 </footer>
+
+<script>
+    const burger = document.getElementById('burger-menu');
+    const nav = document.getElementById('nav-links');
+
+    burger.addEventListener('click', () => {
+        nav.classList.toggle('active');
+    });
+
+    const valueToggles = document.querySelectorAll('.value-toggle');
+
+    valueToggles.forEach((toggle) => {
+        toggle.addEventListener('click', () => {
+            const block = toggle.closest('.value-block');
+            const expanded = toggle.getAttribute('aria-expanded') === 'true';
+
+            block.classList.toggle('open');
+            toggle.setAttribute('aria-expanded', String(!expanded));
+        });
+    });
+</script>
+
+</body>
+</html>

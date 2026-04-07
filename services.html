@@ -23,7 +23,7 @@
             <span></span>
         </div>
 
-        <nav class="nav-links">
+        <nav class="nav-links" id="nav-links">
             <ul>
                 <li><a href="index.html" class="nav-item">Accueil</a></li>
                 <li><a href="a-propos.html" class="nav-item">A propos</a></li>
@@ -329,6 +329,14 @@
             const newHash = window.location.hash.replace('#', '');
             if (newHash) setActiveTab(newHash);
         });
+    });
+
+    // Burger menu script
+    const burger = document.getElementById('burger-menu');
+    const nav = document.getElementById('nav-links');
+
+    burger.addEventListener('click', () => {
+        nav.classList.toggle('active');
     });
 </script>
 
