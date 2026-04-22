@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iokeo - Transformation Business</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/contacts.css">
 </head>
 <body>
 
 <header class="navbar">
     <div class="container nav-wrapper">
         <a href="/" class="logo">
-            <img src="logo.svg" alt="iokeo business transformation">
+            <img src="../image/logo.svg" alt="iokeo business transformation">
         </a>
 
         <div class="burger-menu" id="burger-menu">
@@ -38,15 +39,15 @@
 </header>
 
 <main>
-    <section class="contact-section">
-        <div class="contact-banner">
-            <h1 class="banner-title">Contactez-nous</h1>
-        </div>
-
+   <section class="contact-section">
+    <div class="contact-banner">
+        <img src="../image/img12.png" alt="Notre engagement" class="banner-image">
+        <h1 class="banner-title">Contactez-nous</h1>
+    </div>
         <div class="contact-info-grid container">
             <div class="info-card">
                 <div class="icon-box">
-                    <img src="image/img13 (2).png" alt="Phone">
+                    <img src="../image/img13 (2).png" alt="Phone">
                 </div>
                 <h3 class="card-title">Numéros de téléphone</h3>
                 <p class="card-text">(+229) 01 62 41 97 10</p>
@@ -54,7 +55,7 @@
 
             <div class="info-card">
                 <div class="icon-box">
-                    <img src="image/img14 (2).png" alt="Email">
+                    <img src="../image/img14 (2).png" alt="Email">
                 </div>
                 <h3 class="card-title">Adresse email</h3>
                 <p class="card-text"><a href="mailto:contact@iokeo.com">contact@iokeo.com</a></p>
@@ -62,7 +63,7 @@
 
             <div class="info-card">
                 <div class="icon-box">
-                    <img src="image/img15 (2).png" alt="Location">
+                    <img src="../image/img15 (2).png" alt="Location">
                 </div>
                 <h3 class="card-title">Localisation</h3>
                 <p class="card-text">18, rue 9006 Houénoussou Sainte-Rita</p>
@@ -108,10 +109,10 @@
 <footer class="site-footer">
     <div class="container footer-wrapper">
         <div class="footer-brand">
-            <img src="img7.svg" alt="iokeo business transformation">
+            <img src="../image/img7.svg" alt="iokeo business transformation">
             <p class="footer-desc">Chez IOKEO, nous accompagnons les entreprises et institutions à chaque étape de leur transformation à travers des stratégies claires, des processus efficaces et des systèmes.</p>
             <div class="social-links">
-                <a href="https://www.linkedin.com/company/iokeo/"><img src="img16.png" alt="LinkedIn"></a>
+                <a href="https://www.linkedin.com/company/iokeo/"><img src="../image/img16.png" alt="LinkedIn"></a>
             </div>
         </div>
         <div class="footer-nav">
@@ -149,21 +150,21 @@
     document.addEventListener('DOMContentLoaded', () => {
         const form = document.querySelector('.contact-form');
         const fields = [
-            { selector: '[name="nom"]', hint: 'Tapez votre nom complet.', validate: value => value.trim() ? { valid: true, message: 'Nom ok.' } : { valid: false, message: 'Le nom est obligatoire.' } },
-            { selector: '[name="prenom"]', hint: 'Tapez votre prénom.', validate: value => value.trim() ? { valid: true, message: 'Prénom ok.' } : { valid: false, message: 'Le prénom est obligatoire.' } },
-            { selector: '[name="email"]', hint: 'Adresse email valide requise (ex: contact@exemple.com).', validate: value => {
+            { selector: '[name="nom"]', hint: '.', validate: value => value.trim() ? { valid: true, message: '' } : { valid: false, message: 'Champs mal renseigné' } },
+            { selector: '[name="prenom"]', hint: 'Tapez votre prénom.', validate: value => value.trim() ? { valid: true, message: '' } : { valid: false, message: 'Champs mal renseigné' } },
+            { selector: '[name="email"]', hint: '', validate: value => {
                 const trimmed = value.trim();
-                if (!trimmed) return { valid: false, message: 'L’adresse email est obligatoire.' };
+                if (!trimmed) return { valid: false, message: 'Champs mal renseigné' };
                 if (!/@/.test(trimmed)) return { valid: false, message: 'L’email doit contenir @.' };
                 if (!/\.[a-z]{2,}$/i.test(trimmed)) return { valid: false, message: 'L’email doit se terminer par .com, .fr, ...' };
-                return { valid: true, message: 'Email valide.' };
+                return { valid: true, message: '' };
             } },
-            { selector: '[name="objet"]', hint: 'Indiquez le sujet de votre message.', validate: value => value.trim() ? { valid: true, message: 'Objet ok.' } : { valid: false, message: 'Le sujet est obligatoire.' } },
+            { selector: '[name="objet"]', hint: '', validate: value => value.trim() ? { valid: true, message: '' } : { valid: false, message: 'Champs mal renseigné' } },
             { selector: '[name="message"]', hint: 'Écrivez au moins 20 caractères.', validate: value => {
                 const trimmed = value.trim();
-                if (!trimmed) return { valid: false, message: 'Le message est obligatoire.' };
+                if (!trimmed) return { valid: false, message: 'Champs mal renseigné' };
                 if (trimmed.length < 20) return { valid: false, message: 'Le message doit contenir au moins 20 caractères.' };
-                return { valid: true, message: 'Message ok.' };
+                return { valid: true, message: 'ATTENTION' };
             } }
         ];
 
