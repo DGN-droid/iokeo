@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iokeo - Transformation Business</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/contacts.css">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="container nav-wrapper">
+        <a href="/" class="logo">
+            <img src="../image/logo.svg" alt="iokeo business transformation">
+        </a>
+
+        <div class="burger-menu" id="burger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <nav class="nav-links">
+            <ul>
+                <li><a href="index.html" class="nav-item">Accueil</a></li>
+                <li><a href="a-propos.html" class="nav-item">A propos</a></li>
+                <li><a href="services.html" class="nav-item">Services</a></li>
+                <li><a href="contacts.html" class="nav-item active">Contacts</a></li>
+            </ul>
+        </nav>
+
+        <div class="btn-general">
+            <div class="mobile-cta">
+                <a href="contacts.html" class="btn-message">Envoyez un message</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main>
+   <section class="contact-section">
+    <div class="contact-banner">
+        <img src="../image/img12.png" alt="Notre engagement" class="banner-image">
+        <h1 class="banner-title">Contactez-nous</h1>
+    </div>
+        <div class="contact-info-grid container">
+            <div class="info-card">
+                <div class="icon-box">
+                    <img src="../image/img13 (2).png" alt="Phone">
+                </div>
+                <h3 class="card-title">Numéros de téléphone</h3>
+                <p class="card-text">(+229) 01 62 41 97 10</p>
+            </div>
+
+            <div class="info-card">
+                <div class="icon-box">
+                    <img src="../image/img14 (2).png" alt="Email">
+                </div>
+                <h3 class="card-title">Adresse email</h3>
+                <p class="card-text"><a href="mailto:contact@iokeo.com">contact@iokeo.com</a></p>
+            </div>
+
+            <div class="info-card">
+                <div class="icon-box">
+                    <img src="../image/img15 (2).png" alt="Location">
+                </div>
+                <h3 class="card-title">Localisation</h3>
+                <p class="card-text">18, rue 9006 Houénoussou Sainte-Rita</p>
+            </div>
+        </div>
+
+        <section class="contact-form-section">
+            <div class="container contact-form-wrapper">
+                <h2>Rédigez votre message</h2>
+                <p>N'hésitez pas à nous laisser un message pour vos préoccupations.<br>Nous répondrons dans les plus brefs délais.</p>
+                <form class="contact-form" action="#" method="post">
+                    <div class="grid-2">
+                        <label>
+                            Nom
+                            <input type="text" name="nom" placeholder="Votre nom" required>
+                        </label>
+                        <label>
+                            Prénom
+                            <input type="text" name="prenom" placeholder="Votre prénom" required>
+                        </label>
+                    </div>
+                    <div class="grid-2">
+                        <label>
+                            Adresse mail
+                            <input type="email" name="email" placeholder="contact@exemple.com" required>
+                        </label>
+                        <label>
+                            Objet
+                            <input type="text" name="objet" placeholder="Sujet" required>
+                        </label>
+                    </div>
+                    <label>
+                        Message
+                        <textarea name="message" rows="6" placeholder="Votre message" required></textarea>
+                    </label>
+                    <button type="submit" class="btn-submit">Envoyer le message</button>
+                </form>
+            </div>
+        </section>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-wrapper">
+        <div class="footer-brand">
+            <img src="../image/img7.svg" alt="iokeo business transformation">
+            <p class="footer-desc">Chez IOKEO, nous accompagnons les entreprises et institutions à chaque étape de leur transformation à travers des stratégies claires, des processus efficaces et des systèmes.</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/company/iokeo/"><img src="../image/img16.png" alt="LinkedIn"></a>
+            </div>
+        </div>
+        <div class="footer-nav">
+            <h4>PAGES</h4>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="a-propos.html">A propos</a></li>
+                <li><a href="services.html">Services</a></li>
+              
+            </ul>
+        </div>
+        <div class="footer-contact">
+             <div class="contact">
+            <h4>CONTACT</h4>
+            </div>
+            <p>18, rue 9006 Houénoussou Sainte-Rita</p>
+            <p><a href="mailto:contact@iokeo.com">contact@iokeo.com</a></p>
+            <p><a href="tel:+2290162419710">(+229) 01 62 41 97 10</a></p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <p>
+                <span>© 2025 iokeo</span>
+                <span class="separator">•</span>
+                <a href="#">Privacy Policy</a>
+                <span class="separator">•</span>
+                <a href="#">Terms & Conditions</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const form = document.querySelector('.contact-form');
+        const fields = [
+            { selector: '[name="nom"]', hint: '.', validate: value => value.trim() ? { valid: true, message: '' } : { valid: false, message: 'Champs mal renseigné' } },
+            { selector: '[name="prenom"]', hint: 'Tapez votre prénom.', validate: value => value.trim() ? { valid: true, message: '' } : { valid: false, message: 'Champs mal renseigné' } },
+            { selector: '[name="email"]', hint: '', validate: value => {
+                const trimmed = value.trim();
+                if (!trimmed) return { valid: false, message: 'Champs mal renseigné' };
+                if (!/@/.test(trimmed)) return { valid: false, message: 'L’email doit contenir @.' };
+                if (!/\.[a-z]{2,}$/i.test(trimmed)) return { valid: false, message: 'L’email doit se terminer par .com, .fr, ...' };
+                return { valid: true, message: '' };
+            } },
+            { selector: '[name="objet"]', hint: '', validate: value => value.trim() ? { valid: true, message: '' } : { valid: false, message: 'Champs mal renseigné' } },
+            { selector: '[name="message"]', hint: 'Écrivez au moins 20 caractères.', validate: value => {
+                const trimmed = value.trim();
+                if (!trimmed) return { valid: false, message: 'Champs mal renseigné' };
+                if (trimmed.length < 20) return { valid: false, message: 'Le message doit contenir au moins 20 caractères.' };
+                return { valid: true, message: 'ATTENTION' };
+            } }
+        ];
+
+        const fieldData = fields.map(field => {
+            const input = form.querySelector(field.selector);
+            if (!input) return null;
+            const hint = document.createElement('span');
+            hint.className = 'field-hint';
+            hint.textContent = field.hint;
+            input.insertAdjacentElement('afterend', hint);
+
+            let touched = false;
+
+            const update = (force = false) => {
+                if (!touched && !force && !input.value.trim()) {
+                    return false;
+                }
+                touched = true;
+                hint.classList.add('visible');
+                const result = field.validate(input.value);
+                hint.textContent = result.message;
+                hint.classList.toggle('error', !result.valid);
+                hint.classList.toggle('success', result.valid);
+                input.classList.toggle('invalid', !result.valid);
+                input.classList.toggle('valid', result.valid);
+                return result.valid;
+            };
+
+            input.addEventListener('input', () => update(false));
+            input.addEventListener('blur', () => update(false));
+            return { input, update };
+        }).filter(Boolean);
+
+        form.addEventListener('submit', event => {
+            let allValid = true;
+            fieldData.forEach(field => {
+                const isValid = field.update(true);
+                if (!isValid) allValid = false;
+            });
+
+            if (!allValid) {
+                event.preventDefault();
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
