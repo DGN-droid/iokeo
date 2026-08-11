@@ -6,6 +6,7 @@
     <title>Iokeo - Transformation Business</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/dynamic-loader.css">
     <style>
         /* ========================================
            STYLES GLOBAUX INDEX
@@ -86,62 +87,7 @@
 <!-- SECTION 3 : SERVICES -->
 <section class="services container">
     <h2 class="section-main-title">Nos services</h2>
-    <div class="services-grid">
-        <article class="service-card">
-            <div class="icon-circle"><img src="../image/img1.jpg" alt="Icon"></div>
-            <h2>Transformation Numérique des Processus Internes avec Microsoft 365</h2>
-            <ul>
-                <li>Applications Métier sous Microsoft 365</li>
-                <li>Robotique Logicielle avec Microsoft Power Desktop</li>
-            </ul>
-            <a href="services.html#transfo-num" class="btn-base btn-view">Voir plus</a>
-        </article>
-        <article class="service-card">
-            <div class="icon-circle"><img src="../image/img2.jpg" alt="Icon"></div>
-            <h2>Ingénierie d'Applications Métier Cross-Platform</h2>
-            <ul>
-                <li>Notre culture: Software Craftsmanship (artisanat logiciel) et DevOps</li>
-                <li>Une expertise Avancée des Technologies qu...</li>
-            </ul>
-            <a href="#" class="btn-base btn-view">Voir plus</a>
-        </article>
-        <article class="service-card">
-            <div class="icon-circle"><img src="../image/img3.jpg" alt="Icon"></div>
-            <h2>BI avec Microsoft Power BI et Management de la Performance</h2>
-            <ul>
-                <li>Business Intelligence et Analytics avec Microsoft Power BI</li>
-                <li>Accompagnement à l'Amélioration Continu...</li>
-            </ul>
-            <a href="services.html#bi-power" class="btn-base btn-view">Voir plus</a>
-        </article>
-        <article class="service-card">
-            <div class="icon-circle"><img src="../image/img4.jpg" alt="Icon"></div>
-            <h2>SI Documentaires et Collaboratifs Open Source</h2>
-            <ul>
-                <li>Gestion Electronique de Courrier</li>
-                <li>Système d'Archivage Electronique</li>
-            </ul>
-            <a href="services.html#si-doc" class="btn-base btn-view">Voir plus</a>
-        </article>
-        <article class="service-card">
-            <div class="icon-circle"><img src="../image/img5.jpg" alt="Icon"></div>
-            <h2>Management du SI</h2>
-            <ul>
-                <li>Conseil en Stratégie Système d'Information</li>
-                <li>Audit des Systèmes d'Information</li>
-            </ul>
-            <a href="services.html#management-si" class="btn-base btn-view">Voir plus</a>
-        </article>
-        <article class="service-card">
-            <div class="icon-circle"><img src="../image/img6.jpg" alt="Icon"></div>
-            <h2>Management des projets</h2>
-            <ul>
-                <li>Accompagnement en Avant-projet</li>
-                <li>Mise en oeuvre de Bureau des projets (Project Management Office)</li>
-            </ul>
-            <a href="services.html#gestion-projets" class="btn-base btn-view">Voir plus</a>
-        </article>
-    </div>
+    <div class="services-grid" id="services-grid"></div>
 </section>
 
 
@@ -162,6 +108,8 @@
 
 </main>
 
+    <script src="../js/services-data.js"></script>
+    <script src="../js/dynamic-loader.js"></script>
     <script>
         // Script pour gérer l'onglet actif au clic
         const navItems = document.querySelectorAll('.nav-item');

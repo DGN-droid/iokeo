@@ -233,6 +233,41 @@
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
+.services-scroller {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 24px 0 40px;
+  box-sizing: border-box;
+}
+
+.services-scroller .services-grid {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  gap: 30px;
+  will-change: transform;
+  min-width: max-content;
+}
+
+.services-scroller .service-card {
+  flex: 0 0 320px;
+  min-width: 320px;
+  max-width: 340px;
+}
+
+.services-scroller .service-card .icon-circle {
+  min-height: 78px;
+}
+
+.services-scroller .services-grid::before,
+.services-scroller .services-grid::after {
+  content: '';
+  display: block;
+  flex: 0 0 30px;
+}
+
+.service-card h2,
 .service-card h3 {
   font-size: 26px;
   font-weight: 900;
