@@ -286,10 +286,83 @@
 @media (max-width: 768px) {
   .management-section {
     padding: 40px 20px;
+    background-color: #ffffff;
   }
 
   .container-management {
     grid-template-columns: 1fr;
     gap: 30px;
+  }
+
+  .services-banner {
+    height: auto;
+    padding: 0;
+    display: block;
+  }
+
+  .services-banner img {
+    display: block;
+    width: 100%;
+    height: clamp(110px, 56vw, 220px);
+    object-fit: cover;
+  }
+
+  .management-sidebar {
+    border: none;
+    padding: 0;
+  }
+
+  .vertical-nav-line {
+    display: none;
+  }
+
+  .tabs-list {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 0;
+    padding-right: 30px;
+  }
+
+  .tabs-list::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    right: 40px;
+    bottom: 10px;
+    width: 2px;
+    background-color: #d9e2e6;
+  }
+
+  .tab-item {
+    flex: none;
+    min-width: 0;
+    padding: 10px 30px 10px 0;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    font-size: 11px;
+    text-align: left;
+  }
+
+  .tab-item.active {
+    background: transparent;
+    border: none;
+    color: var(--primary-color);
+  }
+
+  .tab-item::after {
+    display: block;
+    right: 8px;
+    width: 6px;
+    height: 6px;
+    border: 0;
+    background-color: #d9e2e6;
+  }
+
+  .tab-item.active::after {
+    background-color: var(--primary-color);
+    transform: translateY(-50%) scale(1);
   }
 }
