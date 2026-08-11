@@ -270,3 +270,26 @@
 .footer-contact h4 {
     font-weight: 40;
 }
+
+@media (max-width: 1024px) {
+  .management-section {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .container-management {
+    grid-template-columns: minmax(220px, 1fr) minmax(0, 2fr);
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .management-section {
+    padding: 40px 20px;
+  }
+
+  .container-management {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}

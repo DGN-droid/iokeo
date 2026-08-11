@@ -11,7 +11,7 @@
 
 <header class="navbar">
     <div class="container nav-wrapper">
-        <a href="/" class="logo">
+        <a href="index.html" class="logo">
             <img src="../image/logo.svg" alt="iokeo business transformation">
         </a>
 
@@ -21,7 +21,7 @@
             <span></span>
         </div>
 
-        <nav class="nav-links">
+        <nav class="nav-links" id="nav-links">
             <ul>
                 <li><a href="index.html" class="nav-item">Accueil</a></li>
                 <li><a href="a-propos.html" class="nav-item">A propos</a></li>
@@ -43,7 +43,6 @@
     <div class="contact-banner">
         <img src="../image/img12.png" alt="Notre engagement" class="banner-image">
         <h1 class="banner-title">Contactez-nous</h1>
-    </div>
         <div class="contact-info-grid container">
             <div class="info-card">
                 <div class="icon-box">
@@ -69,6 +68,7 @@
                 <p class="card-text">18, rue 9006 Houénoussou Sainte-Rita</p>
             </div>
         </div>
+    </div>
 
         <section class="contact-form-section">
             <div class="container contact-form-wrapper">
@@ -208,6 +208,23 @@
             if (!allValid) {
                 event.preventDefault();
             }
+        });
+    });
+</script>
+
+<script>
+    const burger = document.getElementById('burger-menu');
+    const nav = document.getElementById('nav-links');
+
+    burger.addEventListener('click', () => {
+        nav.classList.toggle('active');
+        burger.classList.toggle('active');
+    });
+
+    document.querySelectorAll('.nav-item').forEach(item => {
+        item.addEventListener('click', () => {
+            nav.classList.remove('active');
+            burger.classList.remove('active');
         });
     });
 </script>

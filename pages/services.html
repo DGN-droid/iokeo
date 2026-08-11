@@ -14,7 +14,7 @@
      ======================================== -->
 <header class="navbar">
     <div class="container nav-wrapper">
-        <a href="/" class="logo">
+        <a href="index.html" class="logo">
             <img src="../image/logo.svg" alt="iokeo business transformation">
         </a>
 
@@ -339,6 +339,14 @@
 
     burger.addEventListener('click', () => {
         nav.classList.toggle('active');
+        burger.classList.toggle('active');
+    });
+
+    document.querySelectorAll('.nav-item').forEach(item => {
+        item.addEventListener('click', () => {
+            nav.classList.remove('active');
+            burger.classList.remove('active');
+        });
     });
 </script>
 
