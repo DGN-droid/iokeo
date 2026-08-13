@@ -88,7 +88,7 @@ class ServiceCardLoader {
         article.dataset.cardIndex = index;
 
         article.innerHTML = `
-            <div class="icon-circle"><img src="" alt=""></div>
+            <a class="icon-circle" href=""><img src="" alt=""></a>
             <h2></h2>
             <ul></ul>
             <a href="" class="btn-base btn-view"></a>
@@ -269,10 +269,15 @@ class ServiceCardLoader {
      * @param {Object} service - Les données du service
      */
     injectLink(cardElement, service) {
-        const link = cardElement.querySelector('a');
-        if (link) {
-            link.href = service.link;
-            link.textContent = service.linkText;
+        const button = cardElement.querySelector('.btn-view');
+        if (button) {
+            button.href = service.link;
+            button.textContent = service.linkText;
+        }
+
+        const iconLink = cardElement.querySelector('.icon-circle');
+        if (iconLink) {
+            iconLink.href = service.link;
         }
     }
 

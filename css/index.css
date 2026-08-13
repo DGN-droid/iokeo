@@ -258,6 +258,9 @@
 
 .services-scroller .service-card .icon-circle {
   min-height: 78px;
+  display: block;
+  text-decoration: none;
+  color: inherit;
 }
 
 .services-scroller .services-grid::before,

@@ -392,6 +392,11 @@ h1, h2, .about-title {
   flex-shrink: 0;
 }
 
+.steps-container .step-item:last-child .step-number {
+  position: relative;
+  top: 8px;
+}
+
 .step-text h3 {
   font-size: 20px;
   font-weight: 700;
@@ -692,6 +697,11 @@ h1, h2, .about-title {
 
 /* Mobiles */
 @media (max-width: 768px) {
+  .steps-container .step-item:first-child .step-number {
+    position: relative;
+    top: -8px;
+  }
+
   .contact-info-grid {
     display: block;
   }
