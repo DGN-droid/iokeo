@@ -74,7 +74,7 @@
             <div class="container contact-form-wrapper">
                 <h2>Rédigez votre message</h2>
                 <p>N'hésitez pas à nous laisser un message pour vos préoccupations.<br>Nous répondrons dans les plus brefs délais.</p>
-                <form class="contact-form" action="#" method="post">
+                <form class="contact-form" action="mailto:sda@iokeo.com" method="post" enctype="text/plain">
                     <div class="grid-2">
                         <label>
                             Nom
@@ -160,11 +160,11 @@
                 return { valid: true, message: '' };
             } },
             { selector: '[name="objet"]', hint: '', validate: value => value.trim() ? { valid: true, message: '' } : { valid: false, message: 'Champs mal renseigné' } },
-            { selector: '[name="message"]', hint: 'Écrivez au moins 20 caractères.', validate: value => {
+            { selector: '[name="message"]', hint: '', validate: value => {
                 const trimmed = value.trim();
                 if (!trimmed) return { valid: false, message: 'Champs mal renseigné' };
-                if (trimmed.length < 20) return { valid: false, message: 'Le message doit contenir au moins 20 caractères.' };
-                return { valid: true, message: 'ATTENTION' };
+                if (trimmed.length > 50) return { valid: false, message: 'ATTENTION : ne pas excéder 50 caractères.' };
+                return { valid: true, message: '' };
             } }
         ];
 

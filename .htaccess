@@ -1,0 +1,21 @@
+Options -Indexes
+
+RewriteEngine On
+
+# Redirect direct requests for HTML pages to their clean canonical URLs.
+RewriteCond %{THE_REQUEST} \s/+(.+)\.html[?\s] [NC]
+RewriteRule ^(.+)\.html$ /$1 [R=301,L,NE]
+
+# Internally resolve clean page URLs while preserving URL fragments.
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+?)/?$ $1.html [END]
+
+# Basic hardening for Apache hosts with mod_headers enabled.
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+</IfModule>
