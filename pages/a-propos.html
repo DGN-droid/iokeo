@@ -211,7 +211,7 @@
         <div class="footer-nav">
             <h4>PAGES</h4>
             <ul>
-                <li><a href="index.html">Acceuil</a></li>
+                <li><a href="index.html">Accueil</a></li>
                 <li><a href="a-propos.html">A propos</a></li>
                 <li><a href="services.html">Services</a></li>
             </ul>
@@ -256,13 +256,23 @@
 
     const valueToggles = document.querySelectorAll('.value-toggle');
 
+    const toggleValueBlock = (block) => {
+        const toggle = block.querySelector('.value-toggle');
+        const expanded = toggle.getAttribute('aria-expanded') === 'true';
+
+        block.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(!expanded));
+    };
+
     valueToggles.forEach((toggle) => {
         toggle.addEventListener('click', () => {
-            const block = toggle.closest('.value-block');
-            const expanded = toggle.getAttribute('aria-expanded') === 'true';
+            toggleValueBlock(toggle.closest('.value-block'));
+        });
+    });
 
-            block.classList.toggle('open');
-            toggle.setAttribute('aria-expanded', String(!expanded));
+    document.querySelectorAll('.value-title-blue').forEach((title) => {
+        title.addEventListener('click', () => {
+            toggleValueBlock(title.closest('.value-block'));
         });
     });
 </script>

@@ -80,6 +80,13 @@ h1, h2, .about-title {
   font-weight: 800;
 }
 
+p,
+.service-card ul li {
+  font-family: var(--font-family);
+  text-align: justify !important;
+  text-justify: inter-word;
+}
+
 .about-text {
   font-family: var(--font-family);
   font-weight: 400;
@@ -608,6 +615,15 @@ h1, h2, .about-title {
   margin-bottom: 15px;
   font-size: 16px;
   color: rgba(158,161,161,1);
+}
+
+.footer-contact p {
+  margin: 0 0 15px;
+}
+
+.footer-desc,
+.footer-bottom p {
+  text-align: left !important;
 }
 
 .footer-nav a, .footer-contact a {

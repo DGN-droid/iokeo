@@ -21,7 +21,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: 1;
+  z-index: 0;
 }
 
 .hero::after {
@@ -32,7 +32,7 @@
   width: 100%;
   height: 100%;
   background: rgba(0,0,0,0.2);
-  z-index: 0;
+  z-index: 1;
 }
 
 .hero-container {
@@ -146,6 +146,7 @@
   font-style: normal;
   font-weight: 700;
   line-height: 130%;
+  margin-bottom: 10px;
 }
 
 .about-text {
@@ -156,6 +157,7 @@
   font-style: normal;
   font-weight: 400;
   line-height: 130%;
+  margin-top: 0;
 }
 
 .btn-about {
@@ -261,6 +263,10 @@
   display: block;
   text-decoration: none;
   color: inherit;
+}
+
+.services-scroller .service-card .icon-circle img {
+  mix-blend-mode: multiply;
 }
 
 .services-scroller .services-grid::before,
@@ -541,8 +547,8 @@ html, body, * {
     grid-template-columns: 1fr;
     grid-template-areas:
       "title"
-      "image"
       "text"
+      "image"
       "button";
   }
 
