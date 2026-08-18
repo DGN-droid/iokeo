@@ -74,7 +74,7 @@
             <div class="container contact-form-wrapper">
                 <h2>Rédigez votre message</h2>
                 <p>N'hésitez pas à nous laisser un message pour vos préoccupations.<br>Nous répondrons dans les plus brefs délais.</p>
-                <form class="contact-form" action="mailto:contact@iokeo.com" method="post" enctype="text/plain">
+                <form class="contact-form" action="../mail/envoimail.php" method="post">
                     <div class="grid-2">
                         <label>
                             Nom
@@ -209,6 +209,17 @@
                 event.preventDefault();
             }
         });
+
+        const params = new URLSearchParams(window.location.search);
+        const status = params.get('status');
+        if (status === 'success' || status === 'error') {
+            const statusMessage = document.createElement('p');
+            statusMessage.className = `field-hint visible ${status}`;
+            statusMessage.textContent = status === 'success'
+                ? 'Votre message a été envoyé avec succès.'
+                : 'Une erreur est survenue lors de l’envoi de votre message.';
+            form.insertAdjacentElement('beforebegin', statusMessage);
+        }
     });
 </script>
 
